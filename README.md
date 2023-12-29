@@ -1,7 +1,5 @@
-Absolutely, creating a README file for your React + TypeScript application using Vite, along with additional libraries like NextUI, Framer Motion, Tailwind CSS, and React Router, is a great way to help users understand how to use your app and its dependencies. Here's a template you can use:
-
 ```markdown
-# Your App Name
+# Alpine Gate UI
 
 Brief description or introduction to your application.
 
