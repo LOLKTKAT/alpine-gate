@@ -36,11 +36,15 @@
   padding: 24px 0;
   border-radius: 0px 8px 8px 0;
 }
-.sidebar section {
+.sidebar-section {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
+.sidebar-section > div:nth-child(-n + 4) {
+  order: 0; /* Set a negative order to move these items to the start */
+}
+
 .nav-item {
   aspect-ratio: 1;
   height: 32px;

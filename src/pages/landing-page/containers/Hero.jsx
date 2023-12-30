@@ -6,14 +6,16 @@ import { motion } from "framer-motion";
 import { Header, Paragraph } from "../../../components/TextComponents";
 import { SectionsCopy } from "../../../data";
 import { StarIcon } from "../../../assets/icons";
-const Hero = ({ sectionId }) => {
+
+const Hero = ({ sectionId, setActiveBtn }) => {
   const { header, paragraphCopy } = SectionsCopy.value[sectionId];
 
   const navigate = useNavigate();
 
   function handleSubmit(event) {
     event.preventDefault();
-    navigate("/image");
+    setActiveBtn(0);
+    navigate("/dashboard");
   }
   return (
     <div className="p-5 text-default-900 hero">

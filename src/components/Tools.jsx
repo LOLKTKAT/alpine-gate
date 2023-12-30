@@ -11,8 +11,8 @@ import { useCaseData, NumOfImgs, sizes } from "../data";
 
 const Tools = () => {
   return (
-    <Card className="tools">
-      <div className="header flex justify-between">
+    <Card className="tools w-80">
+      <div className="header flex  dark justify-between">
         <div>AGIImageAi</div>
         <div>histroy</div>
       </div>
@@ -68,7 +68,7 @@ const Tools = () => {
         </Select>
         <Select
           items={NumOfImgs}
-          label="number of images"
+          label="No. of images"
           placeholder="select a number"
           size="sm"
         >

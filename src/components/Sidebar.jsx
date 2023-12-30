@@ -9,7 +9,7 @@ import {
   UsersIcon,
 } from "../assets/icons";
 const NAV_ITEMS = [
-  { file: logo, name: "Home", path: "" },
+  { file: logo, name: "Home", path: "", icon: <Avatar /> },
   {
     file: paintbrush,
     name: "Image Generator",
@@ -37,7 +37,7 @@ function Sidebar({ activeBtn, setActiveBtn }) {
   }, [activeBtn]);
   return (
     <Card className="sidebar dark">
-      <section>
+      <section className="sidebar-section">
         {NAV_ITEMS.slice(0, 4).map((item, i) => {
           if (activeBtn === -1) {
             navigate("/");
@@ -51,10 +51,10 @@ function Sidebar({ activeBtn, setActiveBtn }) {
               className="dark"
             >
               <Button
-                onClick={() => handleClick(i, item.path)}
+                onClick={() => handleClick(i)}
+                color={activeBtn === i - 1 ? "secondary" : ""}
                 key={i}
                 isIconOnly
-                color={activeBtn === i - 1 ? "secondary" : ""}
                 aria-label="Like"
                 size="lg"
               >
@@ -65,8 +65,8 @@ function Sidebar({ activeBtn, setActiveBtn }) {
         })}
       </section>
 
-      <section>
-        {NAV_ITEMS.slice(4, 6).map((item) => {
+      <section className="sidebar-section">
+        {NAV_ITEMS.slice(4, 6).map((item, i) => {
           return (
             <Tooltip
               showArrow={true}
@@ -75,7 +75,14 @@ function Sidebar({ activeBtn, setActiveBtn }) {
               delay={0}
               className="dark"
             >
-              <Button isIconOnly variant="light" aria-label="Like" size="lg">
+              <Button
+                key={i + 4}
+                onClick={() => handleClick(i + 5)}
+                isIconOnly
+                color={activeBtn === i + 4 ? "secondary" : ""}
+                aria-label="Like"
+                size="lg"
+              >
                 {item.icon}
               </Button>
             </Tooltip>

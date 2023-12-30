@@ -26,7 +26,7 @@ import PromptEngineeringSection from "./containers/PromptEngineeringSection";
 import GenerateArticlesSection from "./containers/GenerateArticlesSection";
 import FeaturesTo from "./containers/FeaturesTo";
 import { theme } from "../../data";
-const LandingPage = () => {
+const LandingPage = ({ activeBtn, setActiveBtn }) => {
   const [toggleTheme, setToggleTheme] = useState(false);
 
   useEffect(() => {
@@ -61,7 +61,7 @@ const LandingPage = () => {
     <>
       <div className="w-full">
         <NavBar />
-        <Hero sectionId={0} />
+        <Hero activeBtn={activeBtn} setActiveBtn={setActiveBtn} sectionId={0} />
         <br />
         <br />
         <br />
