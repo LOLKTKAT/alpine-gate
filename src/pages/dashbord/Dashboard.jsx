@@ -12,7 +12,6 @@ const Dashboard = ({ activeBtn, setActiveBtn }) => {
   return (
     <div className="flex gap-5 bg-neutral-950 py-5 pr-5">
       <Sidebar setActiveBtn={setActiveBtn} activeBtn={activeBtn} />
-
       {Tabs[activeBtn]}
     </div>
   );

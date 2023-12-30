@@ -10,7 +10,9 @@ const Chat = () => {
         <Output />
         <PromptInput type="chat" />
       </div>
-      <ChatTools />
+      <div>
+        <ChatTools />
+      </div>
     </div>
   );
 };

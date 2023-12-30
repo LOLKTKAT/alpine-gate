@@ -1,10 +1,10 @@
 import React from "react";
-import { Card, Button, Tooltip } from "@nextui-org/react";
+import { Card, Button, Tooltip, Link } from "@nextui-org/react";
 import { XIcon } from "../assets/icons";
-
+import { SubHeader, ParagraphHeader, Paragraph } from "./TextComponents";
 function Output() {
   return (
-    <Card className="output overflow-y-scroll ">
+    <Card className="overflow-y-scroll h-96">
       <div className="flex sticky pl-6 pr-6 pt-3 top-0 gap-2 justify-end ">
         <Tooltip content="Clear Prompt" delay={1000}>
           <Button
@@ -17,42 +17,46 @@ function Output() {
         </Tooltip>
       </div>
       <div className="pl-6 pr-6">
-        pool FC for the 2020-21 season. See the last and upcoming matches of the
-        first team, men, women, U23s and U18s. Liverpool FC - YouTube
-        https://www.youtube.com/user/LiverpoolFC Get closer to the Reds than
-        anyone else!Well, you're in the right place with new and exclusive
-        uploads bringing you closer to the Reds, every week. Watch mat...
-        Liverpool FC — Fixtures https://www.liverpoolfc.com/fixtures Find out
-        the next match dates and times for Liverpool FC in the Emirates FA Cup,
-        Europa League and other competitions. See the fixtures, results and
-        stats for the club's matches in 2023 and 2024. pool FC for the 2020-21
-        season. See the last and upcoming matches of the first team, men, women,
-        U23s and U18s. Liverpool FC - YouTube
-        https://www.youtube.com/user/LiverpoolFC Get closer to the Reds than
-        anyone else!Well, you're in the right place with new and exclusive
-        uploads bringing you closer to the Reds, every week. Watch mat...
-        Liverpool FC — Fixtures https://www.liverpoolfc.com/fixtures Find out
-        the next match dates and times for Liverpool FC in the Emirates FA Cup,
-        Europa League and other competitions. See the fixtures, results and
-        stats for the club's matches in 2023 and 2024. pool FC for the 2020-21
-        season. See the last and upcoming matches of the first team, men, women,
-        U23s and U18s. Liverpool FC - YouTube
-        https://www.youtube.com/user/LiverpoolFC Get closer to the Reds than
-        anyone else!Well, you're in the right place with new and exclusive
-        uploads bringing you closer to the Reds, every week. Watch mat...
-        Liverpool FC — Fixtures https://www.liverpoolfc.com/fixtures Find out
-        the next match dates and times for Liverpool FC in the Emirates FA Cup,
-        Europa League and other competitions. See the fixtures, results and
-        stats for the club's matches in 2023 and 2024. pool FC for the 2020-21
-        season. See the last and upcoming matches of the first team, men, women,
-        U23s and U18s. Liverpool FC - YouTube
-        https://www.youtube.com/user/LiverpoolFC Get closer to the Reds than
-        anyone else!Well, you're in the right place with new and exclusive
-        uploads bringing you closer to the Reds, every week. Watch mat...
-        Liverpool FC — Fixtures https://www.liverpoolfc.com/fixtures Find out
-        the next match dates and times for Liverpool FC in the Emirates FA Cup,
-        Europa League and other competitions. See the fixtures, results and
-        stats for the club's matches in 2023 and 2024.
+        <p>
+          <SubHeader>
+            How Forests Communicate Underground The Wood Wide Web Forests
+          </SubHeader>
+
+          <br />
+          <ParagraphHeader>The Wood Wide Web</ParagraphHeader>
+          <Paragraph>
+            Forests are complex ecosystems where trees are interconnected in a
+            myriad of ways, particularly through an underground network often
+            referred to as the "Wood Wide Web." This network consists of
+            mycorrhizal fungi, which form symbiotic relationships with the roots
+            of trees. Through these connections, trees can exchange nutrients,
+            water, and chemical signals with one another, effectively
+            communicating and sharing resources. Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit. Laboriosam laborum, obcaecati soluta
+            nulla beatae porro, cumque excepturi tempora corporis quas
+            doloremque labore? Nam ipsum necessitatibus molestiae nisi at
+            voluptates laboriosam. Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Nemo iusto, omnis aliquid inventore sint earum
+            eius rem nobis. Quo saepe perferendis, officia labore vel, nisi
+            cumque, animi optio quisquam officiis facere? Temporibus facilis
+            quis aut nisi cupiditate! Odit cumque animi dignissimos, blanditiis
+            consequuntur sit quae! Doloribus, provident perferendis iusto rerum
+            ipsam doloremque? Obcaecati neque porro laborum sint harum
+            consectetur dolore?
+          </Paragraph>
+          <br />
+          <ParagraphHeader>For further information</ParagraphHeader>
+          <Paragraph>
+            on how trees communicate through underground networks, you can
+            explore the resources provided in the links below: -
+          </Paragraph>
+
+          <Link showAnchorIcon href="#" color="foreground">
+            <li>
+              How Trees Secretly Talk to Each Other in the Forest | Decoder
+            </li>
+          </Link>
+        </p>
       </div>
     </Card>
   );

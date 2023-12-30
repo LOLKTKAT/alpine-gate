@@ -5,19 +5,14 @@ import { StarIcon } from "../assets/icons.jsx";
 
 function PromptInput({ handleKeyPress, type }) {
   return (
-    <Card className="prompt-card ">
+    <Card className="p-3">
       <textarea
         placeholder="Enter a prompt..."
         type="text"
-        className="prompt-input"
+        className="all-unset h-18"
       />
       <div onKeyDown={handleKeyPress} className="flex gap-3">
-        <Button
-          // onClick={() => handleSubmit()}
-          type="submit"
-          color="secondary"
-          endContent={<StarIcon />}
-        >
+        <Button type="submit" color="secondary" endContent={<StarIcon />}>
           Generate
         </Button>
         <PromptButtons type={type} />
