@@ -1,16 +1,23 @@
 import React from "react";
-import { Card, Button } from "@nextui-org/react";
+import { Card, Button, Tooltip } from "@nextui-org/react";
 import PromptButtons from "./PromptButtons.jsx";
-import { StarIcon } from "../assets/icons.jsx";
+import { StarIcon, EditIcon } from "../assets/icons.jsx";
 
 function PromptInput({ handleKeyPress, type }) {
   return (
-    <Card className="p-3">
+    <Card className="p-3 relative">
       <textarea
         placeholder="Enter a prompt..."
         type="text"
-        className="all-unset h-18"
+        className="all-unset h-18 max-w-4/5 overflow-wrap-break pr-10"
       />
+      <div className="absolute right-10 top-5 flex flex-col h-10 justify-between">
+        <Tooltip content="Edit Prompt" delay={1000}>
+          <div className="cursor-pointer">
+            <EditIcon />
+          </div>
+        </Tooltip>
+      </div>
       <div onKeyDown={handleKeyPress} className="flex gap-3">
         <Button type="submit" color="secondary" endContent={<StarIcon />}>
           Generate

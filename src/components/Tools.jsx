@@ -7,7 +7,7 @@ import {
   SelectItem,
   Card,
 } from "@nextui-org/react";
-import { useCaseData, NumOfImgs, sizes } from "../data";
+import { useCaseData, NumOfImgs, sizes, textLocation } from "../data";
 
 const Tools = () => {
   return (
@@ -56,7 +56,7 @@ const Tools = () => {
           </Select>
           <Select
             items={NumOfImgs}
-            label="No. of images"
+            label="Number of images"
             placeholder="select a number"
             size="sm"
           >
@@ -72,12 +72,16 @@ const Tools = () => {
             size="sm"
           />
           <Select
-            items={["top", "middle", "buttom"]}
+            items={textLocation}
             label="text location"
             placeholder="select a location"
             size="sm"
           >
-            <SelectItem></SelectItem>
+            {(textLocation) => (
+              <SelectItem key={textLocation.value}>
+                {textLocation.value}
+              </SelectItem>
+            )}
           </Select>
         </div>
         <div className="w-full">

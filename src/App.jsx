@@ -5,7 +5,7 @@ import LandingPage from "./pages/landing-page/LandingPage.jsx";
 import { theme } from "./data/index.js";
 import Dashboard from "./pages/dashbord/Dashboard.jsx";
 
-function App() {
+const App = () => {
   const [activeBtn, setActiveBtn] = useState(() => {
     const savedValue = localStorage.getItem("activeBtn");
     return savedValue !== null ? parseInt(savedValue, 10) : 0;
@@ -37,6 +37,6 @@ function App() {
       </main>
     </>
   );
-}
+};
 
 export default App;

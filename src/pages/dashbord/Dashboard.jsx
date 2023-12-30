@@ -10,7 +10,7 @@ const Dashboard = ({ activeBtn, setActiveBtn }) => {
     localStorage.setItem("activeBtn", activeBtn.toString());
   }, [activeBtn]);
   return (
-    <div className="flex gap-5 bg-neutral-950 py-5 pr-5">
+    <div className="flex dark gap-5 bg-neutral-950 py-5 pr-5">
       <Sidebar setActiveBtn={setActiveBtn} activeBtn={activeBtn} />
       {Tabs[activeBtn]}
     </div>

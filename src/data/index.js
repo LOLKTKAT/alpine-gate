@@ -84,15 +84,15 @@ export const useCaseData = [
 ];
 
 export const NumOfImgs = [
-  { value: 1 },
-  { value: 2 },
-  { value: 3 },
-  { value: 4 },
-  { value: 6 },
-  { value: 8 },
-  { value: 16 },
-  { value: 24 },
-  { value: 32 },
+  { value: "1" },
+  { value: "2" },
+  { value: "3" },
+  { value: "4" },
+  { value: "6" },
+  { value: "8" },
+  { value: "16" },
+  { value: "24" },
+  { value: "32" },
 ];
 export const sizes = [
   { value: "1792x1024" },
@@ -101,4 +101,9 @@ export const sizes = [
   { value: "4096x4096" },
   { value: "6144x6144" },
   { value: "8K" },
+];
+export const textLocation = [
+  { value: "top" },
+  { value: "center" },
+  { value: "buttom" },
 ];
