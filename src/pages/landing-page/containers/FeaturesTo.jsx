@@ -15,6 +15,7 @@ import {
   SectionHeader,
   SubHeader,
 } from "../../../components/TextComponents";
+import { DownloadIcon, HistoryIcon, UploadIcon } from "../../../assets/icons";
 
 const History = () => {
   return (
@@ -69,7 +70,15 @@ function FeaturesTo() {
 
       <section className="flex flex-col items-center  ">
         <Tabs key="lg" size="lg" color="secondary" aria-label="Tabs sizes">
-          <Tab key="History Work" title="History Work">
+          <Tab
+            key="History Work"
+            title={
+              <div className="flex items-center space-x-2">
+                <HistoryIcon />
+                <span>Work History</span>
+              </div>
+            }
+          >
             <section className="prompt-engineering justify-between items-center flex  w-full">
               <div className="h-96 w-2/5 p-5 justify-center flex flex-col">
                 <Paragraph>
@@ -86,7 +95,15 @@ function FeaturesTo() {
             </section>
           </Tab>
 
-          <Tab key="File Upload" title="File Upload">
+          <Tab
+            key="File Upload"
+            title={
+              <div className="flex items-center space-x-2">
+                <UploadIcon />
+                <span>Upload Files</span>
+              </div>
+            }
+          >
             <section className="prompt-engineering justify-between items-center flex  w-full">
               <div className="h-96 w-2/5 p-5 justify-center flex flex-col">
                 <Paragraph>
@@ -100,7 +117,15 @@ function FeaturesTo() {
             </section>
           </Tab>
 
-          <Tab key="Download Work" title="Download Work">
+          <Tab
+            key="Download Work"
+            title={
+              <div className="flex items-center space-x-2">
+                <DownloadIcon />
+                <span>Download Work</span>
+              </div>
+            }
+          >
             <section className="prompt-engineering justify-between items-center flex  w-full">
               <div className="h-96  p-5 justify-center flex flex-col">
                 <Paragraph>

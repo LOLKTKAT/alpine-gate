@@ -3,9 +3,10 @@ import { blogImg } from "../../../assets";
 import { Card, Input, Button } from "@nextui-org/react";
 import { Paragraph, SectionHeader } from "../../../components/TextComponents";
 import { SectionsCopy } from "../../../data";
+import { MagicWandIcon } from "../../../assets/icons";
 
 function PromptEngineeringSection({ sectionId }) {
-  const { header, paragraphCopy } = SectionsCopy.value[sectionId];
+  const { header } = SectionsCopy.value[sectionId];
   return (
     <article className="prompt-engineering w-full light:bg-white flex flex-col  items-center">
       <SectionHeader>{header}</SectionHeader>
@@ -16,26 +17,31 @@ function PromptEngineeringSection({ sectionId }) {
             <img
               className="h-full w-full object-cover rounded-xl"
               src={blogImg}
-              alt=""
+              alt="blog image"
             />
           </div>
         </section>
         <section className="w-2/5 flex flex-col gap-10">
-          <Paragraph>{paragraphCopy}</Paragraph>
-          <Input
-            type="text"
-            label="Prompt"
-            placeholder="Write a prompt..."
-            size="lg"
-            variant="flat"
-            labelPlacement="inside"
-            color="secondary"
-            endContent={
-              <Button type="submit" color="secondary">
-                Enhance Prompt
-              </Button>
-            }
-          />
+          <div className="flex relative" action="">
+            <Input
+              type="text"
+              label="Prompt"
+              placeholder="Massage Albert AI..."
+              size="lg"
+              variant="flat"
+              labelPlacement="inside"
+              color="secondary"
+              className="abosulte"
+            />
+            <Button
+              type="submit"
+              color="secondary"
+              className="absolute right-3 top-3"
+              endContent={<MagicWandIcon />}
+            >
+              Enhance Prompt
+            </Button>
+          </div>
           <Card className="landing__chat-output h-96 w-full p-5">
             <Paragraph>
               I am interested in a detailed description of an ideal modern home

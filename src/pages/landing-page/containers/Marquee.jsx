@@ -9,6 +9,8 @@ import {
   generatedImage7,
   generatedImage8,
 } from "../../../assets";
+import { PauseIcon, PlayIcon } from "../../../assets/icons";
+import { Button } from "@nextui-org/react";
 
 const Marquee = () => {
   const [isAnimationRunning, setIsAnimationRunning] = useState(true);
@@ -29,10 +31,23 @@ const Marquee = () => {
   };
 
   return (
-    <div className=" gap-10 box-wrapper">
-      <button onClick={toggleAnimation}>
-        {isAnimationRunning ? "Pause" : "Resume"}
-      </button>
+    <div className="flex flex-col gap-3 relative w-full -top-48 box-wrapper">
+      <Button
+        variant="flat"
+        isIconOnly
+        className="border-0 outline-none focus:outline-none mt-1 mx-3 "
+        onClick={toggleAnimation}
+      >
+        {isAnimationRunning ? (
+          <div className="scale-150">
+            <PauseIcon />
+          </div>
+        ) : (
+          <div className="scale-150">
+            <PlayIcon />
+          </div>
+        )}
+      </Button>
       <div
         className={`flex gap-10 marquee ${
           isAnimationRunning ? "running" : "paused"

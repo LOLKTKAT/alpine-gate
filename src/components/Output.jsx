@@ -1,41 +1,20 @@
 import React from "react";
-import {
-  Card,
-  Button,
-  Dropdown,
-  DropdownTrigger,
-  DropdownMenu,
-  DropdownItem,
-} from "@nextui-org/react";
+import { Card, Button, Tooltip } from "@nextui-org/react";
+import { XIcon } from "../assets/icons";
 
 function Output() {
-  function handleAction(key) {
-    if (key === "history") {
-      alert("history");
-    }
-  }
   return (
     <Card className="output overflow-y-scroll ">
       <div className="flex sticky pl-6 pr-6 pt-3 top-0 gap-2 justify-end ">
-        <Dropdown>
-          <DropdownTrigger>
-            <Button
-              variant="bordered"
-              className="border-1 text-2xl"
-              isIconOnly
-              aria-label="Clear"
-            >
-              ⋮
-            </Button>
-          </DropdownTrigger>
-          <DropdownMenu
-            aria-label="Action event example"
-            onAction={(key) => handleAction(key)}
-          >
-            <DropdownItem key="new">Clear</DropdownItem>
-            <DropdownItem key="history">History</DropdownItem>
-          </DropdownMenu>
-        </Dropdown>
+        <Tooltip content="Clear Prompt" delay={1000}>
+          <Button
+            variant="flat"
+            className="border-1 outline-none focus:outline-none"
+            isIconOnly
+            endContent={<XIcon />}
+            radius="sm"
+          ></Button>
+        </Tooltip>
       </div>
       <div className="pl-6 pr-6">
         pool FC for the 2020-21 season. See the last and upcoming matches of the

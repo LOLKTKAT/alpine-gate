@@ -1,10 +1,11 @@
 import React from "react";
 import { Card, Button } from "@nextui-org/react";
 import PromptButtons from "./PromptButtons.jsx";
+import { StarIcon } from "../assets/icons.jsx";
 
-function PromptInput({ handleKeyPress, inputRef, type }) {
+function PromptInput({ handleKeyPress, type }) {
   return (
-    <Card className="prompt-card">
+    <Card className="prompt-card ">
       <textarea
         placeholder="Enter a prompt..."
         type="text"
@@ -12,11 +13,10 @@ function PromptInput({ handleKeyPress, inputRef, type }) {
       />
       <div onKeyDown={handleKeyPress} className="flex gap-3">
         <Button
-          className="w-0"
+          // onClick={() => handleSubmit()}
           type="submit"
-          ref={inputRef}
           color="secondary"
-          radius="sm"
+          endContent={<StarIcon />}
         >
           Generate
         </Button>

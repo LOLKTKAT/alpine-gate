@@ -6,11 +6,11 @@ import "../../App.css";
 const Chat = () => {
   return (
     <div className="dashboard">
-      <ChatTools />
       <div className="flex output-card flex-col h-full gap-8">
         <Output />
         <PromptInput type="chat" />
       </div>
+      <ChatTools />
     </div>
   );
 };

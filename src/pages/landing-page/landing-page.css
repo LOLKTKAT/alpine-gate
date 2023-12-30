@@ -1,7 +1,4 @@
 .box-wrapper {
-  position: relative;
-  top: -170px;
-  width: 100%;
   overflow: hidden;
 }
 .hero {

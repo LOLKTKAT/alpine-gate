@@ -1,52 +1,64 @@
 import React, { useEffect, useState } from "react";
 import { logo, paintbrush, vector, search, users, avatar } from "../assets/";
-import { Tooltip, Button, Card } from "@nextui-org/react";
+import { Tooltip, Button, Card, Avatar } from "@nextui-org/react";
 import { useNavigate } from "react-router-dom";
-
+import {
+  ChatIcon,
+  ImageGeneratorIcon,
+  SearchIcon,
+  UsersIcon,
+} from "../assets/icons";
 const NAV_ITEMS = [
-  { file: logo, name: "Home", path: "home" },
-  { file: paintbrush, name: "Image Generator", path: "image" },
-  { file: vector, name: "Chat", path: "chat" },
-  { file: search, name: "Search", path: "search" },
-  { file: users, name: "friends", path: "friends" },
-  { file: avatar, name: "account", path: "accoutn" },
+  { file: logo, name: "Home", path: "" },
+  {
+    file: paintbrush,
+    name: "Image Generator",
+    path: "image",
+    icon: <ImageGeneratorIcon />,
+  },
+  { file: vector, name: "Chat", path: "chat", icon: <ChatIcon /> },
+  { file: search, name: "Search", path: "search", icon: <SearchIcon /> },
+  { file: users, name: "friends", path: "friends", icon: <UsersIcon /> },
+  {
+    file: avatar,
+    name: "account",
+    path: "accoutn",
+    icon: <Avatar />,
+  },
 ];
 
-function Sidebar() {
+function Sidebar({ activeBtn, setActiveBtn }) {
   const navigate = useNavigate();
-  const [activeBtn, setActiveBtn] = useState(0);
-
-  function handleClick(index, path) {
-    setActiveBtn(index);
-    navigate(`/${path}`);
+  function handleClick(index) {
+    setActiveBtn(index - 1);
   }
   useEffect(() => {
     setActiveBtn(activeBtn);
   }, [activeBtn]);
   return (
-    <Card className="sidebar ">
+    <Card className="sidebar dark">
       <section>
         {NAV_ITEMS.slice(0, 4).map((item, i) => {
+          if (activeBtn === -1) {
+            navigate("/");
+          }
           return (
             <Tooltip
               showArrow={true}
               content={`${item.name}`}
               placement="right"
               delay={0}
+              className="dark"
             >
               <Button
                 onClick={() => handleClick(i, item.path)}
                 key={i}
                 isIconOnly
-                color={activeBtn === i ? "secondary" : ""}
+                color={activeBtn === i - 1 ? "secondary" : ""}
                 aria-label="Like"
                 size="lg"
               >
-                <img
-                  className="nav-image"
-                  src={item.file}
-                  alt={`${item.name}`}
-                />
+                {item.icon}
               </Button>
             </Tooltip>
           );
@@ -61,13 +73,10 @@ function Sidebar() {
               content={`${item.name}`}
               placement="right"
               delay={0}
+              className="dark"
             >
               <Button isIconOnly variant="light" aria-label="Like" size="lg">
-                <img
-                  className="nav-image"
-                  src={item.file}
-                  alt={`${item.name}`}
-                />
+                {item.icon}
               </Button>
             </Tooltip>
           );
