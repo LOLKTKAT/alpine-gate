@@ -65,7 +65,7 @@ const LandingPage = ({ activeBtn, setActiveBtn }) => {
           theme.value === "purple-dark"
             ? "light bg-background text-foreground"
             : "dark"
-        }  w-full`}
+        }  w-full transition`}
       >
         <Hero activeBtn={activeBtn} setActiveBtn={setActiveBtn} sectionId={0} />
         <br />
@@ -92,7 +92,7 @@ const LandingPage = ({ activeBtn, setActiveBtn }) => {
         <br />
         <br />
         <article className="pricing-section w-full light:bg-white flex flex-col items-center">
-          <SectionHeader>Pricing</SectionHeader>
+          <SectionHeader className="transition">Pricing</SectionHeader>
           <Paragraph>Check out our pricing plans</Paragraph>
           <section className="flex w-full justify-between">
             <Card className="p-5 pricing-card flex flex-col justify-between">
