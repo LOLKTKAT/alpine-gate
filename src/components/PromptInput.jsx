@@ -5,11 +5,11 @@ import { StarIcon, EditIcon } from "../assets/icons.jsx";
 
 function PromptInput({ handleKeyPress, type }) {
   return (
-    <Card className="p-3 relative">
+    <Card className="p-3 relative flex flex-col justify-between h-1/4">
       <textarea
         placeholder="Enter a prompt..."
         type="text"
-        className="all-unset h-18 max-w-4/5 overflow-wrap-break pr-10"
+        className="all-unset h-full max-w-4/5 overflow-wrap-break mb-2 pr-10"
       />
       <div className="absolute right-10 top-5 flex flex-col h-10 justify-between">
         <Tooltip content="Edit Prompt" delay={1000}>

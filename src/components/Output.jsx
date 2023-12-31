@@ -4,7 +4,7 @@ import { XIcon } from "../assets/icons";
 import { SubHeader, ParagraphHeader, Paragraph } from "./TextComponents";
 function Output() {
   return (
-    <Card className="overflow-y-scroll h-96">
+    <Card className="overflow-y-scroll h-3/4">
       <div className="flex sticky pl-6 pr-6 pt-3 top-0 gap-2 justify-end ">
         <Tooltip content="Clear Prompt" delay={1000}>
           <Button
