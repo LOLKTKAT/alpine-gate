@@ -18,7 +18,7 @@
   height: 100svh;
 }
 :root {
-  --gray-1: #111111;
+  --gray-1: #252525;
   --white: #fff;
   --purple: #6c00a3;
   --radius: 8px;
@@ -84,4 +84,8 @@
 }
 .overflow-wrap-break {
   overflow-wrap: break-word;
+}
+
+[data-slot="popover"] > div > div {
+  color: var(--gray-1);
 }

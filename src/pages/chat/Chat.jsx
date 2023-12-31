@@ -11,7 +11,7 @@ const Chat = () => {
         <PromptInput type="chat" />
       </div>
       <div>
-        <Tools page="chat" />
+        <Tools page={1} />
       </div>
     </div>
   );

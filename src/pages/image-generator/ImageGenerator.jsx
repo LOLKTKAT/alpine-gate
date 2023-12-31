@@ -11,7 +11,7 @@ const ImageGenerator = () => {
           <PromptInput type="image" />
         </div>
         <div>
-          <Tools page="image" />
+          <Tools page={0} />
         </div>
       </div>
     </>

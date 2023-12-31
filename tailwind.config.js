@@ -11,18 +11,5 @@ export default {
     extend: {},
   },
   darkMode: "class",
-  plugins: [
-    nextui({
-      themes: {
-        "purple-dark": {
-          extend: "dark", // <- inherit default values from dark theme
-          colors: {
-            background: "#6C00A3",
-            foreground: "#ffffff",
-            focus: "#6C00A3",
-          },
-        },
-      },
-    }),
-  ],
+  plugins: [nextui()],
 };

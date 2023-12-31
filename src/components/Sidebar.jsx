@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { logo, paintbrush, vector, search, users, avatar } from "../assets/";
 import { Tooltip, Button, Card, Avatar } from "@nextui-org/react";
 import { useNavigate } from "react-router-dom";
@@ -36,7 +36,7 @@ function Sidebar({ activeBtn, setActiveBtn }) {
     setActiveBtn(activeBtn);
   }, [activeBtn]);
   return (
-    <Card className="sidebar dark">
+    <Card className="sidebar ">
       <section className="sidebar-section">
         {NAV_ITEMS.slice(0, 4).map((item, i) => {
           if (activeBtn === -1) {
