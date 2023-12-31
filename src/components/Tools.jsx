@@ -60,7 +60,7 @@ const ToolsEndPoints = [
 
 const Tools = ({ page }) => {
   return (
-    <Card className=" p-5 h-full w-72">
+    <Card className="hidden lg:block p-5 h-full pb-10 w-72">
       <div className="header flex  dark justify-between">
         {page === 0 ? (
           <ParagraphHeader>AGImageAI</ParagraphHeader>
