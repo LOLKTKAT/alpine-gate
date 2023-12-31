@@ -11,7 +11,7 @@ const App = () => {
   });
   return (
     <>
-      <main className={`${theme}   text-foreground bg-background`}>
+      <main className={`${theme} text-foreground bg-background`}>
         <Router>
           <Routes>
             <Route

@@ -5,7 +5,7 @@ import Output from "../../components/Output";
 
 const Search = () => {
   return (
-    <div className="dashboard">
+    <>
       <section className="flex flex-col w-full gap-6">
         <Input
           type="text"
@@ -20,9 +20,9 @@ const Search = () => {
             </Button>
           }
         />
-        <Output className="h-full w-full" />
+        <Output height="h-full" />
       </section>
-    </div>
+    </>
   );
 };
 

@@ -26,6 +26,7 @@ import PromptEngineeringSection from "./containers/PromptEngineeringSection";
 import GenerateArticlesSection from "./containers/GenerateArticlesSection";
 import FeaturesTo from "./containers/FeaturesTo";
 import { theme } from "../../data";
+import { motion } from "framer-motion";
 const LandingPage = ({ activeBtn, setActiveBtn }) => {
   const [toggleTheme, setToggleTheme] = useState(false);
 
@@ -40,10 +41,10 @@ const LandingPage = ({ activeBtn, setActiveBtn }) => {
 
         if (top < window.innerHeight - threshold) {
           setToggleTheme(true);
-          theme.value = "purple-dark";
+          theme.value = "";
         } else {
           setToggleTheme(false);
-          theme.value = "";
+          theme.value = "purple-dark";
         }
       }
     };
@@ -59,8 +60,13 @@ const LandingPage = ({ activeBtn, setActiveBtn }) => {
 
   return (
     <>
-      <div className="w-full">
-        {/* <NavBar /> */}
+      <motion.div
+        className={`${
+          theme.value === "purple-dark"
+            ? "light bg-background text-foreground"
+            : "dark"
+        }  w-full`}
+      >
         <Hero activeBtn={activeBtn} setActiveBtn={setActiveBtn} sectionId={0} />
         <br />
         <br />
@@ -98,7 +104,7 @@ const LandingPage = ({ activeBtn, setActiveBtn }) => {
                   You can use this plan, no credit card required!
                 </Paragraph>
                 <br />
-                <Divider />
+                <Divider className="divider" />
               </section>
               <section>
                 <Paragraph>
@@ -117,7 +123,7 @@ const LandingPage = ({ activeBtn, setActiveBtn }) => {
               <br />
               <Button color="secondary">use this plan</Button>
             </Card>
-            <Card className="p-5 pricing-card flex flex-col justify-between">
+            <Card className="p-5 bg-purple-950 text-background pricing-card flex flex-col justify-between">
               <section>
                 <SubHeader>free</SubHeader>
                 <br />
@@ -160,7 +166,8 @@ const LandingPage = ({ activeBtn, setActiveBtn }) => {
         <br />
         <br />
         <br />
-      </div>
+        <article className="pricing-section w-full light:bg-white flex flex-col items-center"></article>
+      </motion.div>
     </>
   );
 };

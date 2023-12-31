@@ -8,7 +8,7 @@ const ImageGenerator = () => {
   return (
     <>
       <div className="flex output-card flex-col h-full gap-8">
-        <Output />
+        <Output height="h-3/4" />
         <PromptInput type="image" />
       </div>
       <motion.div initial={{ opacity: 0.5 }} animate={{ opacity: 1 }}>

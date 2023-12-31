@@ -3,7 +3,7 @@ import { Button, Input, Slider, Card } from "@nextui-org/react";
 import { Select, SelectItem } from "@nextui-org/select";
 import { useCaseData, NumOfImgs, sizes, textLocation } from "../data";
 import { ParagraphHeader } from "./TextComponents";
-
+import { HistoryIcon } from "../assets/icons";
 const CreativitySlider = {
   label: "Creativity",
   placeholder: "Select a Tone",
@@ -62,12 +62,17 @@ const Tools = ({ page }) => {
   return (
     <Card className="hidden lg:block p-5 h-full pb-10 w-72">
       <div className="header flex  dark justify-between">
-        {page === 0 ? (
-          <ParagraphHeader>AGImageAI</ParagraphHeader>
-        ) : (
-          <ParagraphHeader>Albert</ParagraphHeader>
-        )}
-        <ParagraphHeader>History</ParagraphHeader>
+        <div className="cursor-pointer">
+          {page === 0 ? (
+            <ParagraphHeader>AGImageAI</ParagraphHeader>
+          ) : (
+            <ParagraphHeader>Albert</ParagraphHeader>
+          )}
+        </div>
+        <div className="flex items-center gap-2 cursor-pointer">
+          <HistoryIcon />
+          <ParagraphHeader>History</ParagraphHeader>
+        </div>
       </div>
       <section className="flex  flex-col h-full  justify-between">
         <div className="flex flex-col gap-5 h-full py-5">
@@ -123,7 +128,7 @@ const Tools = ({ page }) => {
         </div>
         <div className="w-full">
           <Button className="w-full" color="secondary">
-            Download images
+            {page == 0 ? "Download Images" : "Download Output"}
           </Button>
         </div>
       </section>

@@ -2,9 +2,9 @@ import React from "react";
 import { Card, Button, Tooltip, Link } from "@nextui-org/react";
 import { XIcon } from "../assets/icons";
 import { SubHeader, ParagraphHeader, Paragraph } from "./TextComponents";
-function Output() {
+function Output({ height }) {
   return (
-    <Card className="overflow-y-scroll h-3/4">
+    <Card className={`overflow-y-scroll ${height}`}>
       <div className="flex sticky pl-6 pr-6 pt-3 top-0 gap-2 justify-end ">
         <Tooltip content="Clear Prompt" delay={1000}>
           <Button
