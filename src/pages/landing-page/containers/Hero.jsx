@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { Header, Paragraph } from "../../../components/TextComponents";
 import { SectionsCopy } from "../../../data";
 import { StarIcon } from "../../../assets/icons";
+import NavBar from "../../../components/Navbar";
 
 const Hero = ({ sectionId, setActiveBtn }) => {
   const { header, paragraphCopy } = SectionsCopy.value[sectionId];
@@ -19,6 +20,7 @@ const Hero = ({ sectionId, setActiveBtn }) => {
   }
   return (
     <div className="p-5 text-default-900 hero">
+      <NavBar />
       <article className="bg-purple-900    w-full gap-10  flex  rounded-3xl px-20 pt-28 pb-60 motion.">
         <motion.section
           initial={{ y: 25, opacity: 0 }}

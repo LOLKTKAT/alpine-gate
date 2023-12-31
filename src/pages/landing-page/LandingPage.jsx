@@ -60,7 +60,7 @@ const LandingPage = ({ activeBtn, setActiveBtn }) => {
   return (
     <>
       <div className="w-full">
-        <NavBar />
+        {/* <NavBar /> */}
         <Hero activeBtn={activeBtn} setActiveBtn={setActiveBtn} sectionId={0} />
         <br />
         <br />

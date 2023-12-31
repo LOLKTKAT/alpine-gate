@@ -1,8 +1,8 @@
 import React from "react";
-import ChatTools from "../../components/ChatTools";
 import Output from "../../components/Output";
 import PromptInput from "../../components/PromptInput";
 import "../../App.css";
+import Tools from "../../components/Tools";
 const Chat = () => {
   return (
     <div className="dashboard">
@@ -11,7 +11,7 @@ const Chat = () => {
         <PromptInput type="chat" />
       </div>
       <div>
-        <ChatTools />
+        <Tools page="chat" />
       </div>
     </div>
   );
