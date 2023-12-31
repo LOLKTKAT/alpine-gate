@@ -36,7 +36,7 @@ function Sidebar({ activeBtn, setActiveBtn }) {
     setActiveBtn(activeBtn);
   }, [activeBtn]);
   return (
-    <Card className="sidebar ">
+    <Card className="sidebar rounded-l-sm">
       <section className="sidebar-section">
         {NAV_ITEMS.slice(0, 4).map((item, i) => {
           if (activeBtn === -1) {
@@ -56,7 +56,7 @@ function Sidebar({ activeBtn, setActiveBtn }) {
                 key={i}
                 isIconOnly
                 aria-label="Like"
-                size="lg"
+                size="md"
               >
                 {item.icon}
               </Button>
@@ -81,7 +81,7 @@ function Sidebar({ activeBtn, setActiveBtn }) {
                 isIconOnly
                 color={activeBtn === i + 4 ? "secondary" : ""}
                 aria-label="Like"
-                size="lg"
+                size="md"
               >
                 {item.icon}
               </Button>

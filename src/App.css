@@ -26,7 +26,7 @@
 .sidebar {
   background-color: var(--gray-1);
   color: var(--white);
-  min-width: 60px;
+  min-width: 55px;
   transform: translateY(20px);
   height: 90vh;
   display: flex;
@@ -34,50 +34,22 @@
   justify-content: space-between;
   align-items: center;
   padding: 24px 0;
-  border-radius: 0px 8px 8px 0;
 }
 .sidebar-section {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
-.sidebar-section > div:nth-child(-n + 4) {
-  order: 0; /* Set a negative order to move these items to the start */
-}
 
-.nav-item {
-  aspect-ratio: 1;
-  height: 32px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.nav-image {
-  height: 22px;
-}
 .active {
   background-color: var(--purple);
   border-radius: var(--radius);
-}
-
-.tool-form-row {
-  display: flex;
-  gap: 12px;
-}
-.row-1 {
-  align-items: baseline;
 }
 
 .all-unset {
   all: unset;
 }
 
-.btn {
-  width: 0px;
-  height: 0;
-  padding: 0;
-}
 .dashed-border {
   background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='25' ry='25' stroke='black' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='25' stroke-linecap='square'/%3e%3c/svg%3e");
   border-radius: 25px;

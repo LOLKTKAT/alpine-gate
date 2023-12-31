@@ -70,7 +70,7 @@ const Tools = ({ page }) => {
         <ParagraphHeader>History</ParagraphHeader>
       </div>
       <section className="flex  flex-col h-full  justify-between">
-        <div className="flex flex-col justify-between h-full py-5">
+        <div className="flex flex-col gap-5 h-full py-5">
           {ToolsEndPoints[page].map((endPoint) => {
             if (endPoint.elementType === "select")
               return (
@@ -115,10 +115,7 @@ const Tools = ({ page }) => {
               );
             if (endPoint.elementType === "button")
               return (
-                <Button
-                  variant={endPoint.variant}
-                  className={endPoint.className}
-                >
+                <Button variant="flat" className={endPoint.className}>
                   {endPoint.innerText}
                 </Button>
               );

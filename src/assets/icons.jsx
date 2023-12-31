@@ -365,6 +365,28 @@ export const EditIcon = () => {
     </svg>
   );
 };
+export const MicIcon = () => {
+  return (
+    <svg
+      width="36"
+      height="36"
+      viewBox="0 -5 22 28"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g filter="url(#filter0_d_813_785)">
+        <path
+          d="M16.2934 8.96002V9.62669C16.2934 12.5722 13.9056 14.96 10.96 14.96C8.01452 14.96 5.62671 12.5722 5.62671 9.62669V8.96002M10.96 12.2934C9.48728 12.2934 8.29338 11.0994 8.29338 9.62669V5.62669C8.29338 4.15393 9.48728 2.96002 10.96 2.96002C12.4328 2.96002 13.6267 4.15393 13.6267 5.62669V9.62669C13.6267 11.0994 12.4328 12.2934 10.96 12.2934Z"
+          stroke-width="1.34"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          className="stroke-slate-50"
+          height="24"
+        />
+      </g>
+    </svg>
+  );
+};
 export const ExampleIcon = () => {
   return;
 };
