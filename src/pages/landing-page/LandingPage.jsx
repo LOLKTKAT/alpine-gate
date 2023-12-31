@@ -166,7 +166,45 @@ const LandingPage = ({ activeBtn, setActiveBtn }) => {
         <br />
         <br />
         <br />
-        <article className="pricing-section w-full light:bg-white flex flex-col items-center"></article>
+        <article className="pricing-section w-full light:bg-white flex flex-col items-center">
+          <section className="text-center">
+            <div>logo</div>
+            <div className="flex gap-20">
+              <Paragraph>privacy</Paragraph>
+              <Paragraph>features</Paragraph>
+              <Paragraph>contact</Paragraph>
+              <Paragraph>about</Paragraph>
+            </div>
+          </section>
+          <br />
+          <br />
+          <br />
+          <section className="flex justify-between w-full items-end">
+            <div className="flex items-end gap-3">
+              <Input
+                type="email"
+                label="Subscribe to out news letter"
+                placeholder="Enter your email"
+                labelPlacement="outside"
+                size="lg"
+              />
+
+              <Button size="lg" color="secondary" className="rounded-lx">
+                Subscribe
+              </Button>
+            </div>
+            <div>
+              <Paragraph>© 2023 - ALPINEGATE Technologies Inc </Paragraph>
+            </div>
+          </section>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+        </article>
       </motion.div>
     </>
   );
