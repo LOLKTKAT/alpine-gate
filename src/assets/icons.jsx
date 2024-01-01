@@ -387,6 +387,63 @@ export const MicIcon = () => {
     </svg>
   );
 };
+export const GridDotsBottomIcon = () => {
+  return (
+    <svg
+      width="17"
+      height="17"
+      viewBox="0 0 17 17"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M2.58502 2.015H2.59169M2.58502 8.015H2.59169M2.58502 11.015H2.59169M2.58502 5.015H2.59169M5.58502 2.015H5.59169M5.58502 8.015H5.59169M11.585 2.015H11.5917M11.585 8.015H11.5917M8.58502 2.015H8.59169M8.58502 8.015H8.59169M8.58502 11.015H8.59169M8.58502 5.015H8.59169M14.585 2.015H14.5917M14.585 8.015H14.5917M14.585 11.015H14.5917M14.585 5.015H14.5917M14.585 14.015H2.58502"
+        className="stroke-slate-50"
+        stroke-width="1.34"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+};
+export const GridDotsTopIcon = () => {
+  return (
+    <svg
+      width="17"
+      height="17"
+      viewBox="0 0 17 17"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M2.66501 14.015H2.67168M2.66501 8.015H2.67168M2.66501 11.015H2.67168M2.66501 5.015H2.67168M5.66501 14.015H5.67168M5.66501 8.015H5.67168M11.665 14.015H11.6717M11.665 8.015H11.6717M8.66501 14.015H8.67168M8.66501 8.015H8.67168M8.66501 11.015H8.67168M8.66501 5.015H8.67168M14.665 14.015H14.6717M14.665 8.015H14.6717M14.665 11.015H14.6717M14.665 5.015H14.6717M14.665 2.015H2.66501"
+        className="stroke-slate-50"
+        stroke-width="1.34"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+};
+export const GridDotsCenterIcon = () => {
+  return (
+    <svg
+      width="17"
+      height="17"
+      viewBox="0 0 17 17"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M2.125 2.015H2.13167M2.125 14.015H2.13167M2.125 11.015H2.13167M2.125 5.015H2.13167M5.125 2.015H5.13167M5.125 14.015H5.13167M11.125 2.015H11.1317M11.125 14.015H11.1317M8.125 2.015H8.13167M8.125 14.015H8.13167M8.125 11.015H8.13167M8.125 5.015H8.13167M14.125 2.015H14.1317M14.125 14.015H14.1317M14.125 11.015H14.1317M14.125 5.015H14.1317M14.125 8.015H2.125"
+        className="stroke-slate-50"
+        stroke-width="1.34"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+};
 export const ExampleIcon = () => {
   return;
 };

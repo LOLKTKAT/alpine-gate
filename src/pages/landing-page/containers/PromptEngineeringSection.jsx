@@ -4,14 +4,16 @@ import { Card, Input, Button } from "@nextui-org/react";
 import { Paragraph, SectionHeader } from "../../../components/TextComponents";
 import { SectionsCopy } from "../../../data";
 import { MagicWandIcon } from "../../../assets/icons";
+import BlurredCirculs from "../../../components/BlurredCirculs";
 
 function PromptEngineeringSection({ sectionId }) {
   const { header } = SectionsCopy.value[sectionId];
   return (
-    <article className="prompt-engineering w-full light:bg-white flex flex-col  items-center">
+    <article className="prompt-engineering w-full light:bg-white flex flex-col relative  items-center">
+      <BlurredCirculs />
       <SectionHeader>{header}</SectionHeader>
       <br />
-      <div className="flex w-full justify-between  items-center">
+      <div className="flex w-full z-10 justify-between  items-center">
         <section className="">
           <div className="h-96 w-96">
             <img
@@ -42,7 +44,7 @@ function PromptEngineeringSection({ sectionId }) {
               Enhance Prompt
             </Button>
           </div>
-          <Card className="landing__chat-output h-96 w-full p-5">
+          <Card className="landing__chat-output bg-background/100 dark:bg-default-100/30 h-96 w-full p-5">
             <Paragraph>
               I am interested in a detailed description of an ideal modern home
               that balances luxury and functionality. The house should be

@@ -8,13 +8,15 @@ import {
 import { Card, Link, Input, Button } from "@nextui-org/react";
 import { blogImg } from "../../../assets";
 import { SectionsCopy } from "../../../data";
+import BlurredCirculs from "../../../components/BlurredCirculs";
 
 function GenerateArticlesSection({ sectionId }) {
   const { header, paragraphCopy } = SectionsCopy.value[sectionId];
 
   return (
-    <article className="generate-articles  light:bg-white flex flex-col items-center">
-      <div className="seaction-header text-3xl">
+    <article className="generate-articles relative  light:bg-white flex flex-col items-center">
+      <BlurredCirculs />
+      <div className="seaction-header z-10 text-3xl">
         <SectionHeader>{header}</SectionHeader>
       </div>
       <br />
@@ -38,7 +40,7 @@ function GenerateArticlesSection({ sectionId }) {
           />
         </section>
         <section>
-          <Card className="landing__chat-output  w-full  p-5">
+          <Card className="landing__chat-output bg-background/100 dark:bg-default-100/30 w-full  p-5">
             <div className="landing__chat-output-info">
               <img src={blogImg} alt="blog img" />
               <p>

@@ -5,18 +5,18 @@ import {
   SectionHeader,
   SubHeader,
 } from "../../../components/TextComponents";
+import BlurredCirculs from "../../../components/BlurredCirculs";
 function ChooseFrom() {
   return (
-    <article className="prompt-engineering text-white light:text-black w-full light:bg-white flex flex-col  items-center">
+    <article className="prompt-engineering relative text-white light:text-black w-full light:bg-white flex flex-col  items-center">
+      <BlurredCirculs />
       <SectionHeader>
         Choose from a range of prompt tools for optimal results
       </SectionHeader>
-      <br />
       <div className="flex w-full justify-between items-center">
         <section className="flex justify-between w-full ">
-          <Card className="h-96 w-2/5 p-5">
+          <Card className="bg-background/100 dark:bg-default-100/30 h-96 w-2/5 p-5">
             <SubHeader>Use Cases</SubHeader>
-            <br />
             <section className="flex flex-col gap-4 landing__chat-output">
               <Listbox color="secondary">
                 <ListboxSection showDivider>
@@ -27,7 +27,7 @@ function ChooseFrom() {
               </Listbox>
             </section>
           </Card>
-          <Card className="p-5 w-2/5 flex flex-col justify-between">
+          <Card className="p-5 w-2/5 flex bg-background/100 dark:bg-default-100/30 flex-col justify-between">
             <section>
               <div className="h-20 w-20 bg-red-400">
                 <img src="" alt="" />

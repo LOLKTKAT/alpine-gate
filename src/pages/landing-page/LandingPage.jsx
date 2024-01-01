@@ -63,34 +63,17 @@ const LandingPage = ({ activeBtn, setActiveBtn }) => {
       <motion.div
         className={`${
           theme.value === "purple-dark"
-            ? "light bg-background text-foreground"
+            ? "light bg-slate-50 text-foreground"
             : "dark"
-        }  w-full transition`}
+        }   w-full transition flex flex-col gap-60`}
       >
         <Hero activeBtn={activeBtn} setActiveBtn={setActiveBtn} sectionId={0} />
-        <br />
-        <br />
-        <br />
         <UnleashSection sectionId={1} />
-        <br />
-        <br />
-        <br />
         <GenerateArticlesSection sectionId={2} />
-        <br />
-        <br />
-        <br />
         <PromptEngineeringSection sectionId={3} />
-        <br />
-        <br />
-        <br />
         <ChooseFrom />
-        <br />
-        <br />
-        <br />
         <FeaturesTo />
-        <br />
-        <br />
-        <br />
+
         <article className="pricing-section w-full light:bg-white flex flex-col items-center">
           <SectionHeader className="transition">Pricing</SectionHeader>
           <Paragraph>Check out our pricing plans</Paragraph>
@@ -125,11 +108,15 @@ const LandingPage = ({ activeBtn, setActiveBtn }) => {
             </Card>
             <Card className="p-5 bg-purple-950 text-background pricing-card flex flex-col justify-between">
               <section>
-                <SubHeader>free</SubHeader>
+                <SubHeader>Premium</SubHeader>
                 <br />
-                <SectionHeader>0$</SectionHeader>
+                <SectionHeader>
+                  5.75$
+                  <span className="text-xl font-medium"> /month</span>
+                </SectionHeader>
                 <Paragraph>
-                  You can use this plan, no credit card required!
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Corporis, esse.
                 </Paragraph>
                 <br />
                 <Divider />
@@ -153,19 +140,7 @@ const LandingPage = ({ activeBtn, setActiveBtn }) => {
             </Card>
           </section>
         </article>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+
         <article className="pricing-section w-full light:bg-white flex flex-col items-center">
           <section className="text-center">
             <div>logo</div>
@@ -197,12 +172,6 @@ const LandingPage = ({ activeBtn, setActiveBtn }) => {
               <Paragraph>© 2023 - ALPINEGATE Technologies Inc </Paragraph>
             </div>
           </section>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
           <br />
         </article>
       </motion.div>

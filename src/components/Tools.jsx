@@ -1,9 +1,14 @@
 import React from "react";
-import { Button, Input, Slider, Card } from "@nextui-org/react";
+import { Button, Input, Slider, Card, Tab, Tabs } from "@nextui-org/react";
 import { Select, SelectItem } from "@nextui-org/select";
-import { useCaseData, NumOfImgs, sizes, textLocation } from "../data";
-import { ParagraphHeader } from "./TextComponents";
-import { HistoryIcon } from "../assets/icons";
+import { useCaseData, NumOfImgs, sizes } from "../data";
+import { ParagraphHeader, TinyText } from "./TextComponents";
+import {
+  HistoryIcon,
+  GridDotsBottomIcon,
+  GridDotsTopIcon,
+  GridDotsCenterIcon,
+} from "../assets/icons";
 const CreativitySlider = {
   label: "Creativity",
   placeholder: "Select a Tone",
@@ -35,12 +40,6 @@ const ToolsEndPoints = [
       placeholder: "",
       elementType: "input",
       labelPlacement: "inside",
-    },
-    {
-      label: "text location",
-      placeholder: "select a location",
-      items: textLocation,
-      elementType: "select",
     },
   ],
   [
@@ -125,6 +124,37 @@ const Tools = ({ page }) => {
                 </Button>
               );
           })}
+          {page === 0 && (
+            <div className="flex justify-between">
+              <TinyText>Text Location</TinyText>
+              <Tabs aria-label="Options">
+                <Tab
+                  key="photos"
+                  title={
+                    <div title="Bottom">
+                      <GridDotsBottomIcon />
+                    </div>
+                  }
+                />
+                <Tab
+                  key="music"
+                  title={
+                    <div title="Center">
+                      <GridDotsCenterIcon />
+                    </div>
+                  }
+                />
+                <Tab
+                  key="videos"
+                  title={
+                    <div title="Top">
+                      <GridDotsTopIcon />
+                    </div>
+                  }
+                />
+              </Tabs>
+            </div>
+          )}
         </div>
         <div className="w-full">
           <Button className="w-full" color="secondary">

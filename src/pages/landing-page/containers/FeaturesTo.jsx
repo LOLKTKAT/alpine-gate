@@ -62,7 +62,8 @@ const features = [<History />, <UploadFiles />, <DownloadWork />];
 
 function FeaturesTo() {
   return (
-    <article className="w-full  light:bg-white flex flex-col  items-center">
+    <article className="w-full relative light:bg-white flex flex-col  items-center">
+      <div className="h-96 w-1/2 bg-purple-900 opacity-30 absolute blur-3xl top-0	right-0"></div>
       <section>
         <SectionHeader>Features to make your life easier</SectionHeader>
       </section>
@@ -90,7 +91,9 @@ function FeaturesTo() {
                 </Paragraph>
               </div>
               <div className="w-2/5">
-                <Card className="h-96  p-5">{features[0]}</Card>
+                <Card className="bg-background/100 dark:bg-default-100/30 h-96 p-5">
+                  {features[0]}
+                </Card>
               </div>
             </section>
           </Tab>
@@ -112,7 +115,9 @@ function FeaturesTo() {
                 </Paragraph>
               </div>
               <div className="w-2/5">
-                <Card className="h-96  p-5">{features[1]}</Card>
+                <Card className="bg-background/100 dark:bg-default-100/30 h-96 p-5">
+                  {features[1]}
+                </Card>
               </div>
             </section>
           </Tab>
@@ -133,7 +138,9 @@ function FeaturesTo() {
                 </Paragraph>
               </div>
               <div className="w-2/5">
-                <Card className="h-96 p-5">{features[2]}</Card>
+                <Card className="bg-background/100 dark:bg-default-100/30 h-96 p-5">
+                  {features[2]}
+                </Card>
               </div>
             </section>
           </Tab>

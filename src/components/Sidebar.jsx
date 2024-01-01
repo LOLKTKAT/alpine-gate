@@ -47,8 +47,8 @@ function Sidebar({ activeBtn, setActiveBtn }) {
               showArrow={true}
               content={`${item.name}`}
               placement="right"
-              delay={0}
               className="dark"
+              delay={0}
             >
               <Button
                 onClick={() => handleClick(i)}

@@ -11,7 +11,7 @@ export const SectionsCopy = signal([
   },
   {
     sectionName: "unleash",
-    header: "Unleash your creativity with AI-generated images",
+    header: "Examples",
     paragraphCopy: "",
   },
   {
