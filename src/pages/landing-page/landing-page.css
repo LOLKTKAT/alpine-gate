@@ -8,7 +8,7 @@
   animation: moveSlideshow 5s linear infinite;
 }
 .box {
-  background-color: blue;
+  background-color: rebeccapurple;
   aspect-ratio: 1;
   height: 250px;
 }
