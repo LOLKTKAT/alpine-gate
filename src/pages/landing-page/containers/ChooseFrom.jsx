@@ -6,6 +6,8 @@ import {
   SubHeader,
 } from "../../../components/TextComponents";
 import BlurredCirculs from "../../../components/BlurredCirculs";
+import UseCaseComponents from "../../../components/UseCaseComponents";
+
 function ChooseFrom() {
   return (
     <article className="prompt-engineering relative text-white light:text-black w-full light:bg-white flex flex-col  items-center">
@@ -18,13 +20,7 @@ function ChooseFrom() {
           <Card className="bg-background/100 dark:bg-default-100/30 h-96 w-2/5 p-5">
             <SubHeader>Use Cases</SubHeader>
             <section className="flex flex-col gap-4 landing__chat-output">
-              <Listbox color="secondary">
-                <ListboxSection showDivider>
-                  <ListboxItem className="text-white" key="home" href="/">
-                    <Paragraph>Ad Copy</Paragraph>
-                  </ListboxItem>
-                </ListboxSection>
-              </Listbox>
+              <UseCaseComponents />
             </section>
           </Card>
           <Card className="p-5 w-2/5 flex bg-background/100 dark:bg-default-100/30 flex-col justify-between">
@@ -35,7 +31,6 @@ function ChooseFrom() {
             </section>
             <section>
               <SubHeader>Ad Content</SubHeader>
-
               <Paragraph>
                 Ad Content is a prompt tool that helps in creating compelling
                 advertisements for various platforms. It provides suggestions

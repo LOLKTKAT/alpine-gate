@@ -1,5 +1,5 @@
 import React from "react";
-import { blogImg } from "../../../assets";
+import { generatedImage7 } from "../../../assets";
 import { Card, Input, Button } from "@nextui-org/react";
 import { Paragraph, SectionHeader } from "../../../components/TextComponents";
 import { SectionsCopy } from "../../../data";
@@ -18,7 +18,7 @@ function PromptEngineeringSection({ sectionId }) {
           <div className="h-96 w-96">
             <img
               className="h-full w-full object-cover rounded-xl"
-              src={blogImg}
+              src={generatedImage7}
               alt="blog image"
             />
           </div>

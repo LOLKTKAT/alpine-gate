@@ -14,6 +14,7 @@ import generatedImage5 from "./generated-img (5).jpg";
 import generatedImage6 from "./generated-img (6).jpg";
 import generatedImage7 from "./generated-img (7).jpg";
 import generatedImage8 from "./generated-img (8).jpg";
+import generatedImage9 from "./generated-img (9).jpg";
 import LandingPageImage1 from "./landing-page-imgs/landing-page-img (1).jpg";
 import LandingPageImage2 from "./landing-page-imgs/landing-page-img (2).jpg";
 import LandingPageImage3 from "./landing-page-imgs/landing-page-img (3).jpg";
@@ -46,6 +47,7 @@ export {
   generatedImage6,
   generatedImage7,
   generatedImage8,
+  generatedImage9,
   blogImg,
 };
 export const landingPageImages = [
