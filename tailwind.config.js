@@ -8,7 +8,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      scale: {
+        200: "2.00",
+      },
+    },
   },
   darkMode: "class",
   plugins: [nextui()],
