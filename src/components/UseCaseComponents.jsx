@@ -64,17 +64,37 @@ const promptUseCases = [
   { value: "Weather of Today", icon: <BookOpenCaseIcon />, color: "green" },
   { value: "Workout Planner", icon: <BookOpenCaseIcon />, color: "green" },
 ];
+
+function bgColor(color) {
+  switch (color) {
+    case "green":
+      return "bg-green-900/20";
+    case "yellow":
+      return "bg-yellow-900/20";
+    case "pink":
+      return "bg-pink-900/20";
+    case "blue":
+      return "bg-blue-900/20";
+    case "violet":
+      return "bg-violet-900/20";
+    case "orange":
+      return "bg-orange-900/20";
+    case "red":
+      return "bg-red-900/20";
+    default:
+      return "light:bg-black-900/20 dark:bg-gray-900/90";
+  }
+}
 const UseCaseComponents = () => {
   return (
     <Listbox color="secondary">
       {promptUseCases.map((caseItem) => {
-        const classNameColor = `bg-${caseItem.color}-900/20`;
-        console.log(classNameColor);
+        console.log(bgColor(caseItem.color));
         return (
           <ListboxSection showDivider>
             <ListboxItem>
               <div className="flex items-center gap-1">
-                <div className={`bg-${caseItem.color}-900/20 p-2 rounded-full`}>
+                <div className={`${bgColor(caseItem.color)} p-2 rounded-full`}>
                   {caseItem.icon}
                 </div>
                 <Paragraph>{caseItem.value}</Paragraph>
