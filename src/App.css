@@ -40,7 +40,9 @@
   flex-direction: column;
   gap: 24px;
 }
-
+article {
+  gap: 3rem;
+}
 .active {
   background-color: var(--purple);
   border-radius: var(--radius);

@@ -14,14 +14,13 @@ function GenerateArticlesSection({ sectionId }) {
   const { header, paragraphCopy } = SectionsCopy.value[sectionId];
 
   return (
-    <article className="generate-articles relative  light:bg-white flex flex-col items-center">
+    <article className="generate-articles relative light:bg-white flex flex-col items-center">
       <BlurredCirculs />
       <div className="seaction-header z-10 text-3xl">
         <SectionHeader>{header}</SectionHeader>
       </div>
-      <br />
-      <div className="flex gap-10 generate-articles__body">
-        <section>
+      <div className="flex flex-col  lg:flex-row gap-10  justify-between  items-center">
+        <section className="flex flex-col gap-10 ">
           <Paragraph>{paragraphCopy}</Paragraph>
 
           <Input
@@ -40,7 +39,7 @@ function GenerateArticlesSection({ sectionId }) {
           />
         </section>
         <section>
-          <Card className="landing__chat-output bg-background/100 dark:bg-default-100/30 w-full  p-5">
+          <Card className="landing__chat-output bg-background/100  dark:bg-default-100/30  w-full lg:w-128 p-5">
             <div className="landing__chat-output-info">
               <img src={blogImg} alt="blog img" />
               <p>
@@ -48,7 +47,6 @@ function GenerateArticlesSection({ sectionId }) {
                   How Forests Communicate Underground The Wood Wide Web Forests
                 </SubHeader>
 
-                <br />
                 <ParagraphHeader>The Wood Wide Web</ParagraphHeader>
                 <Paragraph>
                   Forests are complex ecosystems where trees are interconnected
@@ -60,7 +58,6 @@ function GenerateArticlesSection({ sectionId }) {
                   signals with one another, effectively communicating and
                   sharing resources.
                 </Paragraph>
-                <br />
                 <ParagraphHeader>For further information</ParagraphHeader>
                 <Paragraph>
                   on how trees communicate through underground networks, you can

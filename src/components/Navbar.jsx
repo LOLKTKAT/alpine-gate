@@ -10,20 +10,27 @@ import {
   NavbarMenu,
   NavbarMenuToggle,
 } from "@nextui-org/react";
+import { AlpineLogo } from "../assets/icons";
 
 function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = ["home", "contact", "about", "pricing"];
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen} className="" shouldHideOnScroll>
+    <Navbar
+      onMenuOpenChange={setIsMenuOpen}
+      className="justify-between capitalize  max-w-1440 lg:h-10 h-full"
+    >
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="sm:hidden"
+          className="sm:hidden "
         />
         <NavbarBrand>
-          <p className="font-bold text-inherit ">ACME</p>
+          <div className="scale-75">
+            <AlpineLogo />
+          </div>
+          <p className="font-bold text-inherit">Alpine Gate</p>
         </NavbarBrand>
       </NavbarContent>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
@@ -50,21 +57,10 @@ function NavBar() {
             Sign Up
           </Button>
         </NavbarItem>
-        <NavbarMenu>
+        <NavbarMenu className="bg-black/80 ">
           {navItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
-              <Link
-                color={
-                  index === 2
-                    ? "primary"
-                    : index === navItems.length - 1
-                    ? "danger"
-                    : "foreground"
-                }
-                className="w-full"
-                href="#"
-                size="lg"
-              >
+              <Link className="w-full capitalize text-white" href="#" size="lg">
                 {item}
               </Link>
             </NavbarMenuItem>

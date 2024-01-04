@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import { Header, Paragraph } from "../../../components/TextComponents";
 import { SectionsCopy } from "../../../data";
 import { StarIcon } from "../../../assets/icons";
-import NavBar from "../../../components/Navbar";
 
 const Hero = ({ sectionId, setActiveBtn }) => {
   const { header, paragraphCopy } = SectionsCopy.value[sectionId];
@@ -19,14 +18,13 @@ const Hero = ({ sectionId, setActiveBtn }) => {
     navigate("/dashboard");
   }
   return (
-    <div className="p-5 text-default-900 hero">
-      <NavBar />
-      <article className="bg-purple-900    w-full gap-10  flex  rounded-3xl px-20 pt-28 pb-60 motion.">
+    <div className="px-5 text-default-900 ">
+      <article className="bg-purple-900 w-full gap-10 justify-center  flex lg:flex-row flex-col items-center px-20 pt-24 pb-52  rounded-3xl  motion">
         <motion.section
           initial={{ y: 25, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.4 }}
-          className="text-6xl w-2/3 font-bold text-center capitalize "
+          className="text-6xl lg:w-2/3 mt-16 lg:mt-0 font-bold text-center capitalize "
         >
           <Header>{header}</Header>
         </motion.section>
@@ -34,7 +32,7 @@ const Hero = ({ sectionId, setActiveBtn }) => {
           initial={{ y: 25, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.4 }}
-          className="w-1/2 flex flex-col gap-5"
+          className="lg:w-1/2 flex flex-col gap-5"
         >
           <Paragraph>{paragraphCopy}</Paragraph>
           <form className="flex relative" onSubmit={handleSubmit} action="">
@@ -46,7 +44,7 @@ const Hero = ({ sectionId, setActiveBtn }) => {
               variant="flat"
               labelPlacement="inside"
               color="secondary"
-              className="abosulte"
+              className="abosulte mb-28 lg:mb-0"
             />
             <Button
               onClick={() => handleSubmit()}

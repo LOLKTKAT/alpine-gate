@@ -3,9 +3,9 @@ import "../landing-page.css";
 import {
   Card,
   Button,
-  Divider,
   Listbox,
   ListboxItem,
+  ListboxSection,
   Tabs,
   Tab,
 } from "@nextui-org/react";
@@ -15,21 +15,33 @@ import {
   SectionHeader,
   SubHeader,
 } from "../../../components/TextComponents";
-import { DownloadIcon, HistoryIcon, UploadIcon } from "../../../assets/icons";
+import {
+  ColoredUploadIcon,
+  DownloadIcon,
+  HistoryIcon,
+  UploadIcon,
+  ColoredDownloadIcon,
+} from "../../../assets/icons";
 
 const History = () => {
   return (
     <div>
       <SubHeader>History</SubHeader>
-      <br />
       <section className="flex flex-col gap-4 landing__chat-output">
-        <Listbox color="secondary">
-          <ListboxItem className="text-white" key="home" href="/">
-            <ParagraphHeader>night vision goggles</ParagraphHeader>
-            <Paragraph>12/09/2023 15:15</Paragraph>
-          </ListboxItem>
+        <Listbox color="default">
+          <ListboxSection showDivider>
+            <ListboxItem className="text-white" key="home" href="/">
+              <ParagraphHeader>night vision goggles</ParagraphHeader>
+              <Paragraph>12/09/2023 15:15</Paragraph>
+            </ListboxItem>
+          </ListboxSection>
+          <ListboxSection>
+            <ListboxItem className="text-white" key="home" href="/">
+              <ParagraphHeader>Write me an article about AI</ParagraphHeader>
+              <Paragraph>12/09/2023 15:10</Paragraph>
+            </ListboxItem>
+          </ListboxSection>
         </Listbox>
-        <Divider />
       </section>
     </div>
   );
@@ -37,12 +49,19 @@ const History = () => {
 const UploadFiles = () => {
   return (
     <>
-      <div className="border-4  border-zinc-500 justify-center gap-10 rounded-2xl border-dashed flex flex-col items-center w-full h-full">
-        <div className="w-20 h-20 bg-red-600"></div>
+      <div className="border-4 border-zinc-500 justify-center gap-10 rounded-2xl border-dashed flex flex-col items-center w-full h-full">
+        <div className="w-20 rounded-full h-20 bg-purple-900/20">
+          <div className="scale-200 flex items-center justify-center w-full h-full ">
+            <ColoredUploadIcon />
+          </div>
+        </div>
         <div>
           <SubHeader>Drag & Drop</SubHeader>
         </div>
-        <Button color="secondary">Browse files</Button>
+        <div className="text-center">
+          <Paragraph>or</Paragraph>
+          <Button color="secondary">Browse files</Button>
+        </div>
       </div>
     </>
   );
@@ -50,10 +69,12 @@ const UploadFiles = () => {
 const DownloadWork = () => {
   return (
     <div className="justify-center gap-10 rounded-2xl border-dashed flex flex-col items-center w-full h-full">
-      <div className="flex items-center flex-col ">
-        <div className="w-20 h-20 bg-red-600"></div>
-        <Paragraph>In many formats, PNG, JPG, DOCX</Paragraph>
+      <div className="w-20 rounded-full h-20 bg-purple-900/20">
+        <div className="scale-200 flex items-center justify-center w-full h-full ">
+          <ColoredDownloadIcon />
+        </div>
       </div>
+      <Paragraph>In many formats, PNG, JPG, DOCX</Paragraph>
       <Button color="secondary">Download</Button>
     </div>
   );
@@ -62,12 +83,11 @@ const features = [<History />, <UploadFiles />, <DownloadWork />];
 
 function FeaturesTo() {
   return (
-    <article className="w-full relative light:bg-white flex flex-col  items-center">
+    <article className="w-full  relative light:bg-white flex flex-col  items-center">
       <div className="h-96 w-1/2 bg-purple-900 opacity-30 absolute blur-3xl top-0	right-0"></div>
       <section>
         <SectionHeader>Features to make your life easier</SectionHeader>
       </section>
-      <br />
 
       <section className="flex flex-col items-center  ">
         <Tabs key="lg" size="lg" color="secondary" aria-label="Tabs sizes">
@@ -80,8 +100,8 @@ function FeaturesTo() {
               </div>
             }
           >
-            <section className="prompt-engineering justify-between items-center flex  w-full">
-              <div className="h-96 w-2/5 p-5 justify-center flex flex-col">
+            <section className="prompt-engineering justify-between small-screen items-center flex w-svw">
+              <div className="sm:h-20 md:h-20  lg:h-96 lg:w-2/5 w-full justify-center flex flex-col">
                 <Paragraph>
                   The Prompt History feature is a functionality that allows the
                   chatbot to remember the conversation history with the user. It
@@ -90,7 +110,7 @@ function FeaturesTo() {
                   personalized conversation.
                 </Paragraph>
               </div>
-              <div className="w-2/5">
+              <div className="lg:w-2/5 w-full ">
                 <Card className="bg-background/100 dark:bg-default-100/30 h-96 p-5">
                   {features[0]}
                 </Card>
@@ -107,14 +127,14 @@ function FeaturesTo() {
               </div>
             }
           >
-            <section className="prompt-engineering justify-between items-center flex  w-full">
-              <div className="h-96 w-2/5 p-5 justify-center flex flex-col">
+            <section className="prompt-engineering small-screen justify-between items-center flex w-svw">
+              <div className="lg:h-96 lg:w-2/5 w-full justify-center flex flex-col">
                 <Paragraph>
                   Upload your images and let our AGImageAI generate similar ones
                   that will take your collection to the next level.
                 </Paragraph>
               </div>
-              <div className="w-2/5">
+              <div className="lg:w-2/5 w-full">
                 <Card className="bg-background/100 dark:bg-default-100/30 h-96 p-5">
                   {features[1]}
                 </Card>
@@ -131,13 +151,13 @@ function FeaturesTo() {
               </div>
             }
           >
-            <section className="prompt-engineering justify-between items-center flex  w-full">
-              <div className="h-96  p-5 justify-center flex flex-col">
+            <section className="prompt-engineering flex justify-between items-center small-screen   w-svw">
+              <div className=" lg:h-96 lg:w-2/5 w-full  p-5 justify-center flex flex-col">
                 <Paragraph>
                   Download your completed work in various formats.
                 </Paragraph>
               </div>
-              <div className="w-2/5">
+              <div className="lg:w-2/5 w-full">
                 <Card className="bg-background/100 dark:bg-default-100/30 h-96 p-5">
                   {features[2]}
                 </Card>

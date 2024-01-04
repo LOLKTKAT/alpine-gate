@@ -9,6 +9,9 @@ export default {
   ],
   theme: {
     extend: {
+      spacing: {
+        128: "30rem",
+      },
       scale: {
         200: "2.00",
       },

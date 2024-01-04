@@ -12,8 +12,7 @@ function PromptEngineeringSection({ sectionId }) {
     <article className="prompt-engineering w-full light:bg-white flex flex-col relative  items-center">
       <BlurredCirculs />
       <SectionHeader>{header}</SectionHeader>
-      <br />
-      <div className="flex w-full z-10 justify-between  items-center">
+      <div className="flex w-full small-screen z-10 justify-between  items-center">
         <section className="">
           <div className="h-96 w-96">
             <img
@@ -23,7 +22,7 @@ function PromptEngineeringSection({ sectionId }) {
             />
           </div>
         </section>
-        <section className="w-2/5 flex flex-col gap-10">
+        <section className="w-2/5 w-full flex flex-col gap-10">
           <div className="flex relative" action="">
             <Input
               type="text"

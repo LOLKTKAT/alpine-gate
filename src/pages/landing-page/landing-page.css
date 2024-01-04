@@ -1,9 +1,7 @@
 .box-wrapper {
   overflow: hidden;
 }
-.hero {
-  height: 100svh;
-}
+
 .box-container {
   animation: moveSlideshow 5s linear infinite;
 }
@@ -88,9 +86,31 @@
   height: 420px;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1100px) {
   .hero {
-    height: 700px; /* Set the maximum height for screens larger than 1440px */
+    height: 100svh;
+  }
+}
+@media screen and (max-width: 1050px) {
+  article {
+    padding: 0 3rem !important; /* Set the maximum height for screens larger than 1440px */
+  }
+}
+@media screen and (max-width: 800px) {
+  article {
+    padding: 0 2rem !important; /* Set the maximum height for screens larger than 1440px */
+  }
+  .small-screen {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    padding: 0 2rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  article {
+    padding: 0 1rem !important; /* Set the maximum height for screens larger than 1440px */
   }
 }
 

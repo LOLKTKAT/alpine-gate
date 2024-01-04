@@ -3,13 +3,23 @@ import { logo, paintbrush, vector, search, users, avatar } from "../assets/";
 import { Tooltip, Button, Card, Avatar } from "@nextui-org/react";
 import { useNavigate } from "react-router-dom";
 import {
+  AlpineLogo,
   ChatIcon,
   ImageGeneratorIcon,
   SearchIcon,
   UsersIcon,
 } from "../assets/icons";
 const NAV_ITEMS = [
-  { file: logo, name: "Home", path: "", icon: <Avatar /> },
+  {
+    file: logo,
+    name: "Home",
+    path: "",
+    icon: (
+      <div className="scale-80">
+        <AlpineLogo />
+      </div>
+    ),
+  },
   {
     file: paintbrush,
     name: "Image Generator",

@@ -22,7 +22,6 @@ function Output({ height }) {
             How Forests Communicate Underground The Wood Wide Web Forests
           </SubHeader>
 
-          <br />
           <ParagraphHeader>The Wood Wide Web</ParagraphHeader>
           <Paragraph>
             Forests are complex ecosystems where trees are interconnected in a
@@ -44,7 +43,6 @@ function Output({ height }) {
             ipsam doloremque? Obcaecati neque porro laborum sint harum
             consectetur dolore?
           </Paragraph>
-          <br />
           <ParagraphHeader>For further information</ParagraphHeader>
           <Paragraph>
             on how trees communicate through underground networks, you can

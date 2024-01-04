@@ -31,7 +31,7 @@ const Marquee = () => {
   };
 
   return (
-    <div className="flex flex-col gap-3 relative w-full -top-48 box-wrapper">
+    <div className="flex flex-col gap-3 relative w-full lg:-top-48 -top-28 mb-10 box-wrapper">
       <Button
         variant="flat"
         isIconOnly
