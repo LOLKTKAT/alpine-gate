@@ -18,7 +18,7 @@ const Hero = ({ sectionId, setActiveBtn }) => {
     navigate("/dashboard");
   }
   return (
-    <div className="px-5 text-default-900 ">
+    <div className="px-5 lg:-mb-96 -mb-44 text-default-900 ">
       <article className="bg-purple-900 w-full gap-10 justify-center  flex lg:flex-row flex-col items-center px-20 pt-24 pb-52  rounded-3xl  motion">
         <motion.section
           initial={{ y: 25, opacity: 0 }}
