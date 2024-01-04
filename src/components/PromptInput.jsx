@@ -5,7 +5,7 @@ import { StarIcon, EditIcon } from "../assets/icons.jsx";
 
 function PromptInput({ handleKeyPress, type }) {
   return (
-    <Card className="p-3 relative flex flex-col justify-between h-1/4">
+    <Card className="p-3 relative flex flex-col justify-between h-1/3 lg:h-1/4">
       <textarea
         placeholder="Enter a prompt..."
         type="text"
@@ -18,7 +18,10 @@ function PromptInput({ handleKeyPress, type }) {
           </div>
         </Tooltip>
       </div>
-      <div onKeyDown={handleKeyPress} className="flex gap-3">
+      <div
+        onKeyDown={handleKeyPress}
+        className="flex flex-col lg:flex-row gap-3"
+      >
         <Button type="submit" color="secondary" endContent={<StarIcon />}>
           Generate
         </Button>
