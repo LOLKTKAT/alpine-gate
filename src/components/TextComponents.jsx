@@ -1,10 +1,10 @@
 import React from "react";
 export const Header = ({ children }) => {
-  return <h1 className="lg:text-6xl font-semibold">{children}</h1>;
+  return <h1 className="lg:text-6xl text-4xl font-semibold">{children}</h1>;
 };
 export const SectionHeader = ({ children }) => {
   return (
-    <h2 className="text-4xl text-center lg:text-start font-semibold">
+    <h2 className="lg:text-4xl text-3xl text-center lg:text-start font-semibold">
       {children}
     </h2>
   );
