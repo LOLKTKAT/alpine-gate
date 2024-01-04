@@ -11,7 +11,7 @@ function PromptInput({ handleKeyPress, type }) {
         type="text"
         className="all-unset h-full max-w-4/5 overflow-wrap-break mb-2 pr-10"
       />
-      <div className="absolute right-10 top-5 flex flex-col h-10 justify-between">
+      <div className="absolute right-5 top-5 flex flex-col h-10 justify-between">
         <Tooltip content="Edit Prompt" delay={1000}>
           <div className="cursor-pointer">
             <EditIcon />
@@ -20,7 +20,7 @@ function PromptInput({ handleKeyPress, type }) {
       </div>
       <div
         onKeyDown={handleKeyPress}
-        className="flex flex-col lg:flex-row gap-3"
+        className="flex flex-col lg:flex-row gap-1 lg:gap-3"
       >
         <Button type="submit" color="secondary" endContent={<StarIcon />}>
           Generate

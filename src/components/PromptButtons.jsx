@@ -11,7 +11,7 @@ function PromptButtons({ type }) {
         <Button variant="flat" endContent={<MagicWandIcon />} radius="sm">
           Enhance Prompt
         </Button>
-        <div className="flex justify-center gap-10 lg:gap- lg:flex-row">
+        <div className="flex justify-center gap-10 lg:gap-2 lg:flex-row">
           <Tooltip className="dark" content="Attach files" delay={1000}>
             <Button
               variant="flat"
