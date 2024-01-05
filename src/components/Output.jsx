@@ -48,11 +48,11 @@ function Output({
                   <div className="scale-75">
                     <AlpineLogo />
                   </div>
-                  <div className="w-full">
+                  <div className="w-full flex flex-col  relative ">
                     <ParagraphHeader>{model}</ParagraphHeader>
                     {promptOutput[i] ? (
                       type === "image" ? (
-                        <div className="h-60 w-full flex lg:flex-row md:flex-row flex-wrap gap-2">
+                        <div className="w-full flex lg:flex-row md:flex-row flex-col gap-2">
                           <div className="h-full w-48">
                             <img src={promptOutput[i][0]} alt="" />
                           </div>
