@@ -45,8 +45,9 @@ function Sidebar({ activeBtn, setActiveBtn }) {
   useEffect(() => {
     setActiveBtn(activeBtn);
   }, [activeBtn]);
+
   return (
-    <Card className="sidebar rounded-l-sm">
+    <Card className="sidebar hidden lg:flex rounded-l-sm">
       <section className="sidebar-section">
         {NAV_ITEMS.slice(0, 4).map((item, i) => {
           if (activeBtn === -1) {

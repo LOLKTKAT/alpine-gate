@@ -63,3 +63,8 @@ article {
 [data-slot="popover"] > div > div {
   color: var(--gray-1);
 }
+@media screen and (max-width: 1025x) {
+  .sidebar-section {
+    flex-direction: row; /* Set the maximum height for screens larger than 1440px */
+  }
+}

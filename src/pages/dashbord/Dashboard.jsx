@@ -13,7 +13,7 @@ const Dashboard = ({ activeBtn, setActiveBtn }) => {
   }, [activeBtn]);
 
   return (
-    <div className=" dashboard flex gap-5 w-svh bg-neutral-950 py-5 pr-5">
+    <div className=" dashboard flex gap-5 w-svh bg-neutral-950 py-5 pr-0 lg:pr-5">
       <Sidebar setActiveBtn={setActiveBtn} activeBtn={activeBtn} />
       {Tabs[activeBtn]}
     </div>

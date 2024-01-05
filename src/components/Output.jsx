@@ -1,51 +1,84 @@
 import React, { useState } from "react";
-import { Card, Button, Tooltip, Avatar, Spinner } from "@nextui-org/react";
-import { AlpineLogo, XIcon } from "../assets/icons";
-import { SubHeader, ParagraphHeader } from "./TextComponents";
+import { Card, Tooltip, Avatar, Spinner, Button } from "@nextui-org/react";
+import { AlpineLogo } from "../assets/icons";
+import { ParagraphHeader, Paragraph, SubHeader } from "./TextComponents";
 
-function Output({ height, generated, type, promptInput, promptOutput }) {
-  const [model, setModel] = useState(
-    type == "chat" ? "Albert Ai" : "AGImageAi"
-  );
+function Output({
+  height,
+  generated,
+  type,
+  promptOutput,
+  outputs,
+  toggleMenu,
+  setToggleMenu,
+}) {
+  const [model] = useState(type == "chat" ? "Albert Ai" : "AGImageAi");
 
   return (
-    <Card className={`overflow-y-scroll  ${height}`}>
-      <div className="flex sticky pl-6 pr-6 pt-3 top-0 gap-2 justify-end ">
+    <Card className={`overflow-y-scroll pb-10   ${height}`}>
+      <div className="flex sticky lg:hidden pl-6 pr-6 pt-3 top-0 gap-2 justify-end ">
         <Tooltip content="Clear Prompt" delay={1000}>
           <Button
-            variant="flat"
-            className="border-1 outline-none focus:outline-none"
             isIconOnly
-            endContent={<XIcon />}
-            radius="sm"
-          ></Button>
+            variant="bordered"
+            className="border-1"
+            onClick={() => setToggleMenu(!toggleMenu)}
+          >
+            <SubHeader>☰</SubHeader>
+          </Button>
         </Tooltip>
       </div>
-      <div className="pl-6 flex flex-col gap-10 pr-6">
+      <div className="pl-3 flex flex-col gap-10 pr-3">
         {generated ? (
           <>
-            <div className="flex items-center gap-2">
-              <Avatar />
-              <div>
-                <ParagraphHeader>@username</ParagraphHeader>
-                <SubHeader>{promptInput}</SubHeader>
-              </div>
-            </div>
-            <div className="flex gap-2">
-              <AlpineLogo />
-              <div className="w-full">
-                <ParagraphHeader>{model}</ParagraphHeader>
-                {promptOutput.length == 0 ? (
-                  <Spinner
-                    label="Generating "
-                    color="secondary"
-                    labelColor="secondary"
-                  />
-                ) : (
-                  promptOutput
-                )}
-              </div>
-            </div>
+            {outputs.map((output, i) => (
+              <>
+                <div className="flex items-center gap-1">
+                  <div className="scale-75">
+                    <Avatar />
+                  </div>
+                  <div>
+                    <ParagraphHeader>@username</ParagraphHeader>
+                    <Paragraph>
+                      <strong>{output.promptValue}</strong>
+                    </Paragraph>
+                  </div>
+                </div>
+                <div className="flex gap-1">
+                  <div className="scale-75">
+                    <AlpineLogo />
+                  </div>
+                  <div className="w-full">
+                    <ParagraphHeader>{model}</ParagraphHeader>
+                    {promptOutput[i] ? (
+                      type === "image" ? (
+                        <div className="h-60 w-full flex lg:flex-row md:flex-row flex-wrap gap-2">
+                          <div className="h-full w-48">
+                            <img src={promptOutput[i][0]} alt="" />
+                          </div>
+                          <div className="h-full w-48">
+                            <img src={promptOutput[i][1]} alt="" />
+                          </div>
+                          <div className="h-full w-48">
+                            <img src={promptOutput[i][2]} alt="" />
+                          </div>
+                        </div>
+                      ) : (
+                        <div>
+                          <Paragraph>{promptOutput[i]}</Paragraph>
+                        </div>
+                      )
+                    ) : (
+                      <Spinner
+                        label="Generating"
+                        color="secondary"
+                        labelColor="secondary"
+                      />
+                    )}
+                  </div>
+                </div>
+              </>
+            ))}
           </>
         ) : (
           ""

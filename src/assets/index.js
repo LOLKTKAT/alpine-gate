@@ -29,6 +29,9 @@ import LandingPageImage11 from "./landing-page-imgs/landing-page-img (11).jpg";
 import LandingPageImage12 from "./landing-page-imgs/landing-page-img (12).jpg";
 import LandingPageImage13 from "./landing-page-imgs/landing-page-img (13).jpg";
 import LandingPageImage14 from "./landing-page-imgs/landing-page-img (14).jpg";
+import outputImage1 from "./image-output (1).jpg";
+import outputImage2 from "./image-output (2).jpg";
+import outputImage3 from "./image-output (3).jpg";
 import blogImg from "./blog-img.jpg";
 export {
   avatar,
@@ -49,6 +52,9 @@ export {
   generatedImage8,
   generatedImage9,
   blogImg,
+  outputImage1,
+  outputImage2,
+  outputImage3,
 };
 export const landingPageImages = [
   LandingPageImage1,
