@@ -31,9 +31,12 @@ export function Footer() {
           <Paragraph>
             <div className="cursor-pointer">about</div>
           </Paragraph>
+          <Paragraph>
+            <div className="cursor-pointer">dashboard</div>
+          </Paragraph>
         </div>
       </section>
-      <section className="flex lg:flex-row flex-col gap-10 justify-between w-full items-end">
+      <section className="flex lg:flex-row flex-col gap-10 justify-between w-full items-center  lg:items-end">
         <div className="flex items-end gap-3">
           <Input
             type="email"
@@ -47,9 +50,9 @@ export function Footer() {
             Subscribe
           </Button>
         </div>
-        <div>
-          <div className="flex   items-center gap-3">
-            <a href="/face">
+        <div className="flex items-center gap-3 flex-col">
+          <div className="flex items-center gap-3">
+            <a>
               <img className="h-7" src={facebookIcon} alt="facebook" />
             </a>
             <a href="https://www.instagram.com/agimage.ai">
