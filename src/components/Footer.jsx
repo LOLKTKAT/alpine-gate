@@ -2,6 +2,12 @@ import React from "react";
 import { AlpineLogo } from "../assets/icons";
 import { Input, Button } from "@nextui-org/react";
 import { Paragraph } from "./TextComponents";
+import {
+  facebookIcon,
+  instagramIcon,
+  linkedinIcon,
+  tictokIcon,
+} from "../assets";
 export function Footer() {
   return (
     <article className="pricing-section w-full light:bg-white flex flex-col gap-6 capitalize items-center">
@@ -27,7 +33,7 @@ export function Footer() {
           </Paragraph>
         </div>
       </section>
-      <section className="flex justify-between w-full items-end">
+      <section className="flex lg:flex-row flex-col gap-10 justify-between w-full items-end">
         <div className="flex items-end gap-3">
           <Input
             type="email"
@@ -42,6 +48,16 @@ export function Footer() {
           </Button>
         </div>
         <div>
+          <div className="flex   items-center gap-3">
+            <a href="/face">
+              <img className="h-7" src={facebookIcon} alt="facebook" />
+            </a>
+            <a href="https://www.instagram.com/agimage.ai">
+              <img className="h-7" src={instagramIcon} alt="instagram" />
+            </a>
+            <img className="h-7" src={linkedinIcon} alt="linkedin" />
+            <img className="h-7" src={tictokIcon} alt="tiktok" />
+          </div>
           <Paragraph>© 2023 - ALPINEGATE Technologies Inc </Paragraph>
         </div>
       </section>

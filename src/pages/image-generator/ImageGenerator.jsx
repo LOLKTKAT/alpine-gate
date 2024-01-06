@@ -7,12 +7,12 @@ import { Button } from "@nextui-org/react";
 import { XIcon } from "../../assets/icons";
 import { outputImage1, outputImage2, outputImage3 } from "../../assets";
 
-const ImageGenerator = () => {
+const ImageGenerator = ({ activeBtn, setActiveBtn }) => {
   const [outputs, setOutputs] = useState([]);
   const [promptInput, setPormptInput] = useState("");
   const [promptOutput, setPromptOutput] = useState([]);
   const [generated, setGenerated] = useState(false);
-  const [toggleMenu, setToggleMenu] = useState(false);
+  const [toggleMenu, setToggleMenu] = useState(true);
 
   function handleGenerate(e) {
     e.preventDefault();
@@ -95,7 +95,12 @@ const ImageGenerator = () => {
             <XIcon />
           </Button>
         </motion.div>
-        <Tools showMenu={toggleMenu ? "hidden" : "flex"} page={0} />
+        <Tools
+          activeBtn={activeBtn}
+          setActiveBtn={setActiveBtn}
+          showMenu={toggleMenu ? "hidden" : "flex"}
+          page={0}
+        />
       </motion.div>
     </>
   );

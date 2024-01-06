@@ -1,12 +1,13 @@
-import React from "react";
-import { Input, Button } from "@nextui-org/react";
+import React, { useState } from "react";
+import { Input, Button, Card } from "@nextui-org/react";
 import { search } from "../../assets";
 import Output from "../../components/Output";
 
 const Search = () => {
+  const [toggleMenu, setToggleMenu] = useState(true);
   return (
     <>
-      <section className="flex flex-col w-full gap-6">
+      <section className="flex flex-col px-4 w-full gap-6">
         <Input
           type="text"
           label="Search"
@@ -20,7 +21,11 @@ const Search = () => {
             </Button>
           }
         />
-        <Output height="h-full" />
+        <Output
+          toggleMenu={toggleMenu}
+          setToggleMenu={setToggleMenu}
+          height="h-full"
+        />
       </section>
     </>
   );

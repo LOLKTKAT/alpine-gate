@@ -10,12 +10,12 @@ import { Button } from "@nextui-org/react";
 // onclick on the generate button push the input to outputs
 // should contain input text also contain an id also contain an output also contain the time also
 
-const Chat = () => {
+const Chat = ({ activeBtn, setActiveBtn }) => {
   const [outputs, setOutputs] = useState([]);
   const [promptInput, setPormptInput] = useState("");
   const [promptOutput, setPromptOutput] = useState([]);
   const [generated, setGenerated] = useState(false);
-  const [toggleMenu, setToggleMenu] = useState(false);
+  const [toggleMenu, setToggleMenu] = useState(true);
 
   function handleGenerate(e) {
     e.preventDefault();
@@ -93,7 +93,12 @@ const Chat = () => {
             <XIcon />
           </Button>
         </motion.div>
-        <Tools showMenu={toggleMenu ? "hidden" : "flex"} page={1} />
+        <Tools
+          activeBtn={activeBtn}
+          setActiveBtn={setActiveBtn}
+          showMenu={toggleMenu ? "hidden" : "flex"}
+          page={1}
+        />
       </motion.div>
     </>
   );

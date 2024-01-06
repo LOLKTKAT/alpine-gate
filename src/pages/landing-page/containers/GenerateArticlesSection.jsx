@@ -23,23 +23,12 @@ function GenerateArticlesSection({ sectionId }) {
         <section className="flex flex-col gap-10 ">
           <Paragraph>{paragraphCopy}</Paragraph>
 
-          <Input
-            type="text"
-            label="Prompt"
-            placeholder="Massage Albert AI..."
-            size="lg"
-            variant="flat"
-            labelPlacement="inside"
-            color="secondary"
-            endContent={
-              <Button type="submit" color="secondary">
-                Generate
-              </Button>
-            }
-          />
+          <Button type="submit" className="w-1/4" color="secondary">
+            Try now
+          </Button>
         </section>
         <section>
-          <Card className="landing__chat-output bg-background/100  dark:bg-default-100/30  w-full lg:w-128 p-5">
+          <Card className="landing__chat-output bg-background/100 h-[500px]  dark:bg-default-100/30  w-full lg:w-128 p-5">
             <div className="landing__chat-output-info">
               <img src={blogImg} alt="blog img" />
               <p>

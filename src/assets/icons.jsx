@@ -14,7 +14,7 @@ export const StarIcon = () => {
           stroke-width="1.34"
           stroke-linecap="round"
           stroke-linejoin="round"
-          className="stroke-slate-50"
+          className="stroke-foreground"
         />
       </g>
       <defs>
@@ -45,7 +45,7 @@ export const MagicWandIcon = () => {
           stroke-width="1.34"
           stroke-linecap="round"
           stroke-linejoin="round"
-          className="stroke-slate-50 stroke-background"
+          className="stroke-foreground stroke-background"
         />
       </g>
       <defs>
@@ -185,7 +185,7 @@ export const PauseIcon = () => {
         stroke-width="1.34"
         stroke-linecap="round"
         stroke-linejoin="round"
-        className="stroke-slate-50"
+        className="stroke-foreground"
       />
     </svg>
   );
@@ -205,7 +205,7 @@ export const PlayIcon = () => {
         stroke-width="1.34"
         stroke-linecap="round"
         stroke-linejoin="round"
-        className="stroke-slate-50"
+        className="stroke-foreground"
       />
     </svg>
   );
@@ -226,7 +226,7 @@ export const AttatchIcon = () => {
           stroke-width="1.34"
           stroke-linecap="round"
           stroke-linejoin="round"
-          className="stroke-slate-50"
+          className="stroke-foreground"
         />
       </g>
       <defs>
@@ -257,13 +257,13 @@ export const XIcon = () => {
         stroke-width="1.34"
         stroke-linecap="round"
         stroke-linejoin="round"
-        className="stroke-slate-50"
+        className="stroke-foreground"
       />
     </svg>
   );
 };
 
-export const ImageGeneratorIcon = () => {
+export const ImageGeneratorIcon = ({ color }) => {
   return (
     <svg
       height="22"
@@ -277,7 +277,7 @@ export const ImageGeneratorIcon = () => {
         stroke-width="1.34"
         stroke-linecap="round"
         stroke-linejoin="round"
-        className="dark:stroke-slate-50 scale-110"
+        className="stroke-foreground"
         height="36"
         width="36"
       />
@@ -299,7 +299,7 @@ export const ChatIcon = () => {
           stroke-width="1.34"
           stroke-linecap="round"
           stroke-linejoin="round"
-          className="stroke-slate-50"
+          className="stroke-foreground"
           height="36"
           width="36"
         />
@@ -331,7 +331,7 @@ export const SearchIcon = () => {
         stroke-width="1.34"
         stroke-linecap="round"
         stroke-linejoin="round"
-        className="stroke-slate-50"
+        className="stroke-foreground"
         height="36"
         width="36"
       />
@@ -353,7 +353,7 @@ export const UsersIcon = () => {
           stroke-width="1.34"
           stroke-linecap="round"
           stroke-linejoin="round"
-          className="stroke-slate-50"
+          className="stroke-foreground"
           height="36"
           width="36"
         />
@@ -386,7 +386,7 @@ export const EditIcon = () => {
           stroke-width="1.34"
           stroke-linecap="round"
           stroke-linejoin="round"
-          className="stroke-slate-50"
+          className="stroke-foreground"
         />
       </g>
       <defs>
@@ -417,7 +417,7 @@ export const MicIcon = () => {
           stroke-width="1.34"
           stroke-linecap="round"
           stroke-linejoin="round"
-          className="stroke-slate-50"
+          className="stroke-foreground"
           height="24"
         />
       </g>
@@ -435,7 +435,7 @@ export const GridDotsBottomIcon = () => {
     >
       <path
         d="M2.58502 2.015H2.59169M2.58502 8.015H2.59169M2.58502 11.015H2.59169M2.58502 5.015H2.59169M5.58502 2.015H5.59169M5.58502 8.015H5.59169M11.585 2.015H11.5917M11.585 8.015H11.5917M8.58502 2.015H8.59169M8.58502 8.015H8.59169M8.58502 11.015H8.59169M8.58502 5.015H8.59169M14.585 2.015H14.5917M14.585 8.015H14.5917M14.585 11.015H14.5917M14.585 5.015H14.5917M14.585 14.015H2.58502"
-        className="stroke-slate-50"
+        className="stroke-foreground"
         stroke-width="1.34"
         stroke-linecap="round"
         stroke-linejoin="round"
@@ -454,7 +454,7 @@ export const GridDotsTopIcon = () => {
     >
       <path
         d="M2.66501 14.015H2.67168M2.66501 8.015H2.67168M2.66501 11.015H2.67168M2.66501 5.015H2.67168M5.66501 14.015H5.67168M5.66501 8.015H5.67168M11.665 14.015H11.6717M11.665 8.015H11.6717M8.66501 14.015H8.67168M8.66501 8.015H8.67168M8.66501 11.015H8.67168M8.66501 5.015H8.67168M14.665 14.015H14.6717M14.665 8.015H14.6717M14.665 11.015H14.6717M14.665 5.015H14.6717M14.665 2.015H2.66501"
-        className="stroke-slate-50"
+        className="stroke-foreground"
         stroke-width="1.34"
         stroke-linecap="round"
         stroke-linejoin="round"
@@ -473,7 +473,7 @@ export const GridDotsCenterIcon = () => {
     >
       <path
         d="M2.125 2.015H2.13167M2.125 14.015H2.13167M2.125 11.015H2.13167M2.125 5.015H2.13167M5.125 2.015H5.13167M5.125 14.015H5.13167M11.125 2.015H11.1317M11.125 14.015H11.1317M8.125 2.015H8.13167M8.125 14.015H8.13167M8.125 11.015H8.13167M8.125 5.015H8.13167M14.125 2.015H14.1317M14.125 14.015H14.1317M14.125 11.015H14.1317M14.125 5.015H14.1317M14.125 8.015H2.125"
-        className="stroke-slate-50"
+        className="stroke-foreground"
         stroke-width="1.34"
         stroke-linecap="round"
         stroke-linejoin="round"
@@ -709,4 +709,4 @@ export const ExampleIcon = () => {
 // stroke-width="1.34"
 // stroke-linecap="round"
 // stroke-linejoin="round"
-// className="stroke-slate-50"
+// className="stroke-foreground"

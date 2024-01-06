@@ -12,38 +12,18 @@ function PromptEngineeringSection({ sectionId }) {
     <article className="prompt-engineering w-full light:bg-white flex flex-col relative  items-center">
       <BlurredCirculs />
       <SectionHeader>{header}</SectionHeader>
-      <div className="flex w-full small-screen z-10 justify-between  items-center">
+      <div className="flex w-full flex-col lg:flex-row z-10 justify-between items-center">
         <section className="">
-          <div className="h-96 w-96">
+          <div className="h-80 lg:h-96">
             <img
-              className="h-full w-full object-cover rounded-xl"
+              className="h-full w-full object-cover aspect-1 rounded-xl"
               src={generatedImage7}
               alt="blog image"
             />
           </div>
         </section>
-        <section className="w-2/5 w-full flex flex-col gap-10">
-          <div className="flex relative" action="">
-            <Input
-              type="text"
-              label="Prompt"
-              placeholder="Massage Albert AI..."
-              size="lg"
-              variant="flat"
-              labelPlacement="inside"
-              color="secondary"
-              className="abosulte"
-            />
-            <Button
-              type="submit"
-              color="secondary"
-              className="absolute right-3 top-3"
-              endContent={<MagicWandIcon />}
-            >
-              Enhance Prompt
-            </Button>
-          </div>
-          <Card className="landing__chat-output bg-background/100 dark:bg-default-100/30 h-96 w-full p-5">
+        <section className="lg:w-2/5 w-full flex flex-col gap-10">
+          <Card className="landing__chat-output bg-background/100 dark:bg-default-100/30 h-[500px] w-full p-5">
             <Paragraph>
               I am interested in a detailed description of an ideal modern home
               that balances luxury and functionality. The house should be
@@ -64,6 +44,15 @@ function PromptEngineeringSection({ sectionId }) {
               drought-resistant plants. A swimming p.....
             </Paragraph>
           </Card>
+          <div className="flex relative" action="">
+            <Button
+              type="submit"
+              color="secondary"
+              endContent={<MagicWandIcon />}
+            >
+              Enhance Prompt
+            </Button>
+          </div>
         </section>
       </div>
     </article>

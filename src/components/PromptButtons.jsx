@@ -14,17 +14,12 @@ function PromptButtons({ type, handleGenerate }) {
             type="submit"
             onClick={() => handleGenerate()}
             color="secondary"
-            className="w-1/2"
+            className="dark"
             endContent={<StarIcon />}
           >
             Generate
           </Button>
-          <Button
-            variant="flat"
-            className="w-1/2"
-            endContent={<MagicWandIcon />}
-            radius="sm"
-          >
+          <Button variant="flat" endContent={<MagicWandIcon />} radius="sm">
             Enhance Prompt
           </Button>
         </div>
@@ -57,6 +52,7 @@ function PromptButtons({ type, handleGenerate }) {
         <Button
           type="submit"
           onClick={() => handleGenerate()}
+          className="dark"
           color="secondary"
           endContent={<StarIcon />}
         >

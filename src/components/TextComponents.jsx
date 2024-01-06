@@ -1,6 +1,6 @@
 import React from "react";
 export const Header = ({ children }) => {
-  return <h1 className="lg:text-6xl text-4xl font-semibold">{children}</h1>;
+  return <h1 className="lg:text-6xl text-4xl font-medium">{children}</h1>;
 };
 export const SectionHeader = ({ children }) => {
   return (
@@ -10,13 +10,13 @@ export const SectionHeader = ({ children }) => {
   );
 };
 export const SubHeader = ({ children }) => {
-  return <div className="text-xl font-semibold">{children}</div>;
+  return <div className="text-xl  font-semibold">{children}</div>;
 };
 export const ParagraphHeader = ({ children }) => {
   return <p className="text-base font-medium">{children}</p>;
 };
 export const Paragraph = ({ children }) => {
-  return <p className="lg:text-base  font-light">{children}</p>;
+  return <p className="lg:text-base font-light">{children}</p>;
 };
 export const TinyText = ({ children }) => {
   return <p className="text-xs font-semibold">{children}</p>;

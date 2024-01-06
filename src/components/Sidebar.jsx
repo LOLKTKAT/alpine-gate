@@ -64,6 +64,7 @@ function Sidebar({ activeBtn, setActiveBtn }) {
               <Button
                 onClick={() => handleClick(i)}
                 color={activeBtn === i - 1 ? "secondary" : ""}
+                className={activeBtn === i - 1 ? "dark" : ""}
                 key={i}
                 isIconOnly
                 aria-label="Like"
@@ -91,6 +92,7 @@ function Sidebar({ activeBtn, setActiveBtn }) {
                 onClick={() => handleClick(i + 4)}
                 isIconOnly
                 color={activeBtn === i + 3 ? "secondary" : ""}
+                className={activeBtn === i + 3 ? "dark" : ""}
                 aria-label="Like"
                 size="md"
               >

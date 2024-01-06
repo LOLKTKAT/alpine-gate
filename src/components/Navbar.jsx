@@ -11,6 +11,7 @@ import {
   NavbarMenuToggle,
 } from "@nextui-org/react";
 import { AlpineLogo } from "../assets/icons";
+import { ParagraphHeader } from "./TextComponents";
 
 function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -38,7 +39,7 @@ function NavBar() {
           return (
             <NavbarItem isActive>
               <Link className="text-inherit" href="#">
-                {item}
+                <ParagraphHeader>{item}</ParagraphHeader>
               </Link>
             </NavbarItem>
           );

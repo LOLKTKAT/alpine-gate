@@ -57,7 +57,7 @@
   width: 40vw;
 }
 .landing__chat-output {
-  height: 600px;
+  /* height: 600px; */
   overflow: hidden; /* Hide scrollbar by default */
   position: relative;
 }

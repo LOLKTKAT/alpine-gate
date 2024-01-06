@@ -89,14 +89,20 @@ function FeaturesTo() {
         <SectionHeader>Features to make your life easier</SectionHeader>
       </section>
 
-      <section className="flex flex-col items-center  ">
-        <Tabs key="lg" size="lg" color="secondary" aria-label="Tabs sizes">
+      <section className="flex flex-col items-center ">
+        <Tabs
+          className="scale-75 lg:scale-100"
+          key="lg"
+          size="lg"
+          color="secondary"
+          aria-label="Tabs sizes"
+        >
           <Tab
             key="History Work"
             title={
               <div className="flex items-center space-x-2">
                 <HistoryIcon />
-                <span>Work History</span>
+                <span>History</span>
               </div>
             }
           >
@@ -123,7 +129,7 @@ function FeaturesTo() {
             title={
               <div className="flex items-center space-x-2">
                 <UploadIcon />
-                <span>Upload Files</span>
+                <span>Upload</span>
               </div>
             }
           >
@@ -147,7 +153,7 @@ function FeaturesTo() {
             title={
               <div className="flex items-center space-x-2">
                 <DownloadIcon />
-                <span>Download Work</span>
+                <span>Download</span>
               </div>
             }
           >

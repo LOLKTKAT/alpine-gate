@@ -32,6 +32,10 @@ import LandingPageImage14 from "./landing-page-imgs/landing-page-img (14).jpg";
 import outputImage1 from "./image-output (1).jpg";
 import outputImage2 from "./image-output (2).jpg";
 import outputImage3 from "./image-output (3).jpg";
+import facebookIcon from "./app-icons/Facebook - Original.png";
+import instagramIcon from "./app-icons/Instagram - Original.png";
+import linkedinIcon from "./app-icons/LinkedIn - Original.png";
+import tictokIcon from "./app-icons/TikTok - Original.png";
 import blogImg from "./blog-img.jpg";
 export {
   avatar,
@@ -55,6 +59,10 @@ export {
   outputImage1,
   outputImage2,
   outputImage3,
+  facebookIcon,
+  instagramIcon,
+  linkedinIcon,
+  tictokIcon,
 };
 export const landingPageImages = [
   LandingPageImage1,

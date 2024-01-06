@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { Card, Tooltip, Avatar, Spinner, Button } from "@nextui-org/react";
+import {
+  Card,
+  Tooltip,
+  Avatar,
+  Spinner,
+  Button,
+  Navbar,
+} from "@nextui-org/react";
 import { AlpineLogo } from "../assets/icons";
 import { ParagraphHeader, Paragraph, SubHeader } from "./TextComponents";
 
@@ -15,7 +22,7 @@ function Output({
   const [model] = useState(type == "chat" ? "Albert Ai" : "AGImageAi");
 
   return (
-    <Card className={`overflow-y-scroll pb-10   ${height}`}>
+    <Card className={`overflow-y-scroll pb-10 pt-6  ${height}`}>
       <div className="flex sticky lg:hidden pl-6 pr-6 pt-3 top-0 gap-2 justify-end ">
         <Tooltip content="Clear Prompt" delay={1000}>
           <Button
