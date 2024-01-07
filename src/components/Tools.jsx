@@ -1,5 +1,5 @@
-import { SmallMenu } from "./SmallMenu";
-import React, { useState } from "react";
+import { SmallMenu } from './SmallMenu';
+import React, { useState } from 'react';
 import {
   Button,
   Input,
@@ -7,118 +7,98 @@ import {
   Card,
   Tab,
   Tabs,
-  Divider,
-} from "@nextui-org/react";
-import { Select, SelectItem } from "@nextui-org/select";
-import { useCaseData, NumOfImgs, sizes } from "../data";
-import {
-  Paragraph,
-  ParagraphHeader,
-  SubHeader,
-  TinyText,
-} from "./TextComponents";
+  Divider
+} from '@nextui-org/react';
+import { Select, SelectItem } from '@nextui-org/select';
+import { NumOfImgs, sizes } from '../data';
+import { promptUseCases } from './UseCaseComponents';
+import { ParagraphHeader, TinyText } from './TextComponents';
 import {
   HistoryIcon,
   GridDotsBottomIcon,
   GridDotsTopIcon,
-  GridDotsCenterIcon,
-} from "../assets/icons";
-import { motion, AnimatePresence } from "framer-motion";
+  GridDotsCenterIcon
+} from '../assets/icons';
 
 const CreativitySlider = {
-  label: "Creativity",
-  placeholder: "Select a Tone",
-  value: "",
+  label: 'Creativity',
+  placeholder: 'Select a Tone',
+  value: '',
   items: [],
-  size: "sm",
-  color: "secondary",
-  elementType: "slider",
-  className: "max-w-md",
+  size: 'sm',
+  color: 'secondary',
+  elementType: 'slider',
+  className: 'max-w-md'
 };
 
 const ToolsEndPoints = [
   [
     CreativitySlider,
     {
-      label: "Size",
-      placeholder: "Select a Size",
+      label: 'Size',
+      placeholder: 'Select a Size',
       items: sizes,
-      elementType: "select",
+      elementType: 'select'
     },
     {
-      label: "Number of images",
-      placeholder: "select a number",
+      label: 'Number of images',
+      placeholder: 'select a number',
       items: NumOfImgs,
-      elementType: "select",
+      elementType: 'select'
     },
     {
-      label: "Text to insert",
-      placeholder: "",
-      elementType: "input",
-      labelPlacement: "inside",
-    },
+      label: 'Text to insert',
+      placeholder: '',
+      elementType: 'input',
+      labelPlacement: 'inside'
+    }
   ],
   [
     {
-      label: "Tone",
-      placeholder: "Select a Tone",
-      items: useCaseData,
-      elementType: "select",
+      label: 'UseCase',
+      placeholder: 'Select a Tone',
+      items: promptUseCases,
+      elementType: 'select'
     },
     CreativitySlider,
     {
-      elementType: "button",
-      innerText: "turn on mic",
-    },
-  ],
+      elementType: 'button',
+      innerText: 'turn on mic'
+    }
+  ]
 ];
 
-const Tools = ({ page, showMenu, activeBtn, setActiveBtn }) => {
+const Tools = ({ page, activeBtn, setActiveBtn }) => {
   const [showHistory, setShowHistory] = useState(false);
   return (
     <>
-      <AnimatePresence>
-        <motion.div
-          key={showMenu}
-          initial={{ x: 300, opacity: 0, position: "relative" }}
-          animate={{ x: 0, opacity: 1, position: "relative" }}
-          transition={{ ease: "easeInOut" }}
-          exit={{ x: 300, opacity: 0 }}
-          className="h-full"
-        >
-          <Card
-            className={`lg:block lg:relative absolute mb-4 right-0 top-0  p-5 h-full pb-10 w-72 ${showMenu}`}
-          >
-            <SmallMenu activeBtn={activeBtn} setActiveBtn={setActiveBtn} />
-            <div className="header flex mb-4 dark justify-between">
-              <div className="cursor-pointer">
-                {page === 0 ? (
-                  <ParagraphHeader>AGImageAI</ParagraphHeader>
-                ) : (
-                  <ParagraphHeader>Albert</ParagraphHeader>
-                )}
-              </div>
-              <div onClick={() => setShowHistory(!showHistory)}>
-                {showHistory ? (
-                  <div className="cursor-pointer">
-                    <ParagraphHeader>Endpoints</ParagraphHeader>
-                  </div>
-                ) : (
-                  <div className="flex cursor-pointer items-center gap-1">
-                    <HistoryIcon />
-                    <ParagraphHeader>History</ParagraphHeader>
-                  </div>
-                )}
-              </div>
-            </div>
-            {showHistory ? (
-              <HistorySection />
+      <Card
+        className={`absolute right-0 top-0 mb-4 h-full w-72 p-5 pb-10 lg:relative lg:block`}
+      >
+        <SmallMenu activeBtn={activeBtn} setActiveBtn={setActiveBtn} />
+        <div className="header mb-4 flex justify-between dark">
+          <div className="cursor-pointer">
+            {page === 0 ? (
+              <ParagraphHeader>AGImageAI</ParagraphHeader>
             ) : (
-              <EndpointsSection page={page} />
+              <ParagraphHeader>Albert</ParagraphHeader>
             )}
-          </Card>
-        </motion.div>
-      </AnimatePresence>
+          </div>
+          <div onClick={() => setShowHistory(!showHistory)}>
+            {showHistory ? (
+              <div className="cursor-pointer">
+                <ParagraphHeader>Endpoints</ParagraphHeader>
+              </div>
+            ) : (
+              <div className="flex cursor-pointer items-center gap-1">
+                <HistoryIcon />
+                <ParagraphHeader>History</ParagraphHeader>
+              </div>
+            )}
+          </div>
+        </div>
+        {showHistory ? <HistorySection /> : <EndpointsSection page={page} />}
+      </Card>
     </>
   );
 };
@@ -127,11 +107,11 @@ export default Tools;
 
 function HistorySection() {
   return (
-    <section className="history h-full landing__chat-output">
-      <div className="flex flex-col cursor-pointer gap-4">
+    <section className="history landing__chat-output h-full">
+      <div className="flex cursor-pointer flex-col gap-4">
         <div>
           <ParagraphHeader>Prompt example NO.1</ParagraphHeader>
-          <Paragraph>12/09/2023 15:10</Paragraph>
+          <TinyText>12/09/2023 15:10</TinyText>
         </div>
         <div>
           <Divider />
@@ -144,10 +124,10 @@ function HistorySection() {
 function EndpointsSection({ page }) {
   return (
     <>
-      <section className="flex flex-col h-full pb-4 justify-between">
+      <section className="flex h-full flex-col justify-between pb-4">
         <div className="flex flex-col gap-5 ">
           {ToolsEndPoints[page].map((endPoint) => {
-            if (endPoint.elementType === "select")
+            if (endPoint.elementType === 'select')
               return (
                 <Select
                   items={endPoint.items}
@@ -161,7 +141,7 @@ function EndpointsSection({ page }) {
                   )}
                 </Select>
               );
-            if (endPoint.elementType === "slider")
+            if (endPoint.elementType === 'slider')
               return (
                 <Slider
                   label={endPoint.label}
@@ -175,11 +155,11 @@ function EndpointsSection({ page }) {
                   fillOffset={0}
                   defaultValue={1.5}
                   formatOptions={{
-                    signDisplay: "always",
+                    signDisplay: 'always'
                   }}
                 />
               );
-            if (endPoint.elementType === "input")
+            if (endPoint.elementType === 'input')
               return (
                 <Input
                   type={endPoint.type}
@@ -190,7 +170,7 @@ function EndpointsSection({ page }) {
                   color=""
                 />
               );
-            if (endPoint.elementType === "button")
+            if (endPoint.elementType === 'button')
               return (
                 <Button variant="flat" className={endPoint.className}>
                   {endPoint.innerText}
@@ -231,7 +211,7 @@ function EndpointsSection({ page }) {
         </div>
         <div className="w-full">
           <Button className="w-full" color="secondary">
-            {page == 0 ? "Download Images" : "Download Output"}
+            {page == 0 ? 'Download Images' : 'Download Output'}
           </Button>
         </div>
       </section>

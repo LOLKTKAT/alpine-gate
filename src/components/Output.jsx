@@ -1,41 +1,14 @@
-import React, { useState } from "react";
-import {
-  Card,
-  Tooltip,
-  Avatar,
-  Spinner,
-  Button,
-  Navbar,
-} from "@nextui-org/react";
-import { AlpineLogo } from "../assets/icons";
-import { ParagraphHeader, Paragraph, SubHeader } from "./TextComponents";
+import React, { useState } from 'react';
+import { Card, Avatar, Spinner } from '@nextui-org/react';
+import { AlpineLogo } from '../assets/icons';
+import { ParagraphHeader, Paragraph } from './TextComponents';
 
-function Output({
-  height,
-  generated,
-  type,
-  promptOutput,
-  outputs,
-  toggleMenu,
-  setToggleMenu,
-}) {
-  const [model] = useState(type == "chat" ? "Albert Ai" : "AGImageAi");
+function Output({ height, generated, type, promptOutput, outputs }) {
+  const [model] = useState(type == 'chat' ? 'Albert Ai' : 'AGImageAi');
 
   return (
-    <Card className={`overflow-y-scroll pb-10 pt-6  ${height}`}>
-      <div className="flex sticky lg:hidden pl-6 pr-6 pt-3 top-0 gap-2 justify-end ">
-        <Tooltip content="Clear Prompt" delay={1000}>
-          <Button
-            isIconOnly
-            variant="bordered"
-            className="border-1"
-            onClick={() => setToggleMenu(!toggleMenu)}
-          >
-            <SubHeader>☰</SubHeader>
-          </Button>
-        </Tooltip>
-      </div>
-      <div className="pl-3 flex flex-col gap-10 pr-3">
+    <Card className={`w-full overflow-y-scroll  pb-10  pt-6 ${height}`}>
+      <div className="flex flex-col gap-10 pl-3 pr-3">
         {generated ? (
           <>
             {outputs.map((output, i) => (
@@ -55,11 +28,11 @@ function Output({
                   <div className="scale-75">
                     <AlpineLogo />
                   </div>
-                  <div className="w-full flex flex-col  relative ">
+                  <div className="relative flex w-full  flex-col ">
                     <ParagraphHeader>{model}</ParagraphHeader>
                     {promptOutput[i] ? (
-                      type === "image" ? (
-                        <div className="w-full flex lg:flex-row md:flex-row flex-col gap-2">
+                      type === 'image' ? (
+                        <div className="flex w-full flex-col gap-2 md:flex-row lg:flex-row">
                           <div className="h-full w-48">
                             <img src={promptOutput[i][0]} alt="" />
                           </div>
@@ -88,7 +61,7 @@ function Output({
             ))}
           </>
         ) : (
-          ""
+          ''
         )}
       </div>
     </Card>

@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import { Input, Button, Card } from "@nextui-org/react";
-import { search } from "../../assets";
-import Output from "../../components/Output";
+import React, { useState } from 'react';
+import { Input, Button } from '@nextui-org/react';
+import { search } from '../../assets';
+import Output from '../../components/Output';
 
 const Search = () => {
   const [toggleMenu, setToggleMenu] = useState(true);
   return (
     <>
-      <section className="flex flex-col px-4 w-full gap-6">
+      <section className="flex w-full flex-col gap-6 px-4">
         <Input
           type="text"
           label="Search"

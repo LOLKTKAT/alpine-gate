@@ -1,6 +1,14 @@
 import React, { useEffect } from "react";
 import { logo, paintbrush, vector, search, users, avatar } from "../assets/";
-import { Tooltip, Button, Card, Avatar } from "@nextui-org/react";
+import {
+  Tooltip,
+  Button,
+  Card,
+  Avatar,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+} from "@nextui-org/react";
 import { useNavigate } from "react-router-dom";
 import {
   AlpineLogo,
@@ -9,13 +17,14 @@ import {
   SearchIcon,
   UsersIcon,
 } from "../assets/icons";
+import { Paragraph, ParagraphHeader, TinyText } from "./TextComponents";
 const NAV_ITEMS = [
   {
     file: logo,
     name: "Home",
     path: "",
     icon: (
-      <div className="scale-80">
+      <div className="scale-75">
         <AlpineLogo />
       </div>
     ),
@@ -33,7 +42,7 @@ const NAV_ITEMS = [
     file: avatar,
     name: "account",
     path: "accoutn",
-    icon: <Avatar />,
+    icon: <Avatar src="https://i.pravatar.cc/150?u=a04258114e29026302d" />,
   },
 ];
 
@@ -78,7 +87,7 @@ function Sidebar({ activeBtn, setActiveBtn }) {
       </section>
 
       <section className="sidebar-section">
-        {NAV_ITEMS.slice(4, 6).map((item, i) => {
+        {NAV_ITEMS.slice(4, 5).map((item, i) => {
           return (
             <Tooltip
               showArrow={true}
@@ -101,6 +110,22 @@ function Sidebar({ activeBtn, setActiveBtn }) {
             </Tooltip>
           );
         })}
+        <Popover placement="top" triggerType="tree">
+          <PopoverTrigger>
+            <Avatar src="https://i.pravatar.cc/150?u=a04258114e29026302d" />
+          </PopoverTrigger>
+          <PopoverContent className="dark p-3 items-start flex flex-col gap-2">
+            <div className="cursor-pointer">
+              <ParagraphHeader>theme</ParagraphHeader>
+            </div>
+            <div className="cursor-pointer">
+              <ParagraphHeader>settings</ParagraphHeader>
+            </div>
+            <div className="cursor-pointer">
+              <ParagraphHeader>log out</ParagraphHeader>
+            </div>
+          </PopoverContent>
+        </Popover>
       </section>
     </Card>
   );

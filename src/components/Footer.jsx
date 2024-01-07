@@ -10,15 +10,15 @@ import {
 } from "../assets";
 export function Footer() {
   return (
-    <article className="pricing-section w-full light:bg-white flex flex-col gap-6 capitalize items-center">
+    <article className="bg-purple-950 lg:py-10  pricing-section w-full light:bg-white flex flex-col gap-6 capitalize items-center">
       <section className="flex flex-col gap-1 cursor-pointer items-center">
-        <div className="p-2 w-fit bg-purple-700/30  rounded-full">
+        <div className="p-2 w-fit bg-black/30  rounded-full">
           <AlpineLogo />
         </div>
         <div>ALPINEGATE</div>
       </section>
-      <section className="text-center">
-        <div className="flex gap-20">
+      <section className="text-center w-full">
+        <div className="flex w-full justify-between">
           <Paragraph>
             <div className="cursor-pointer">privacy</div>
           </Paragraph>
@@ -52,13 +52,13 @@ export function Footer() {
         </div>
         <div className="flex items-center gap-3 flex-col">
           <div className="flex items-center gap-3">
-            <a>
-              <img className="h-7" src={facebookIcon} alt="facebook" />
-            </a>
+            <img className="h-7" src={facebookIcon} alt="facebook" />
             <a href="https://www.instagram.com/agimage.ai">
               <img className="h-7" src={instagramIcon} alt="instagram" />
             </a>
-            <img className="h-7" src={linkedinIcon} alt="linkedin" />
+            <a href="https://www.linkedin.com/company/agimage-ai/">
+              <img className="h-7" src={linkedinIcon} alt="linkedin" />
+            </a>
             <img className="h-7" src={tictokIcon} alt="tiktok" />
           </div>
           <Paragraph>© 2023 - ALPINEGATE Technologies Inc </Paragraph>

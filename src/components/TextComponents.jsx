@@ -16,7 +16,9 @@ export const ParagraphHeader = ({ children }) => {
   return <p className="text-base font-medium">{children}</p>;
 };
 export const Paragraph = ({ children }) => {
-  return <p className="lg:text-base font-light">{children}</p>;
+  return (
+    <p className="lg:text-base text-foreground/80 font-light">{children}</p>
+  );
 };
 export const TinyText = ({ children }) => {
   return <p className="text-xs font-semibold">{children}</p>;

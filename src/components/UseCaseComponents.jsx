@@ -11,7 +11,7 @@ import {
 import { Listbox, ListboxItem, ListboxSection, Card } from "@nextui-org/react";
 import { Paragraph, SubHeader } from "./TextComponents";
 
-const promptUseCases = [
+export const promptUseCases = [
   {
     value: "Ad Content",
     icon: <FilePlusCaseIcon />,

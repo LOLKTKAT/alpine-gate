@@ -50,9 +50,7 @@ const LandingPage = ({ activeBtn, setActiveBtn }) => {
     <>
       <NavBar />
       <motion.div
-        className={`${
-          toggleTheme ? "light bg-slate-50" : "dark"
-        }  text-foreground w-full transition flex flex-col gap-40 pb-10`}
+        className={`text-foreground w-full transition flex flex-col gap-40`}
       >
         <Hero activeBtn={activeBtn} setActiveBtn={setActiveBtn} sectionId={0} />
         <UnleashSection sectionId={1} />
