@@ -1,29 +1,29 @@
-import React from "react";
-import { generatedImage7 } from "../../../assets";
-import { Card, Input, Button } from "@nextui-org/react";
-import { Paragraph, SectionHeader } from "../../../components/TextComponents";
-import { SectionsCopy } from "../../../data";
-import { MagicWandIcon } from "../../../assets/icons";
-import BlurredCirculs from "../../../components/BlurredCirculs";
+import React from 'react';
+import { generatedImage7 } from '../../../assets';
+import { Card, Button } from '@nextui-org/react';
+import { Paragraph, SectionHeader } from '../../../components/TextComponents';
+import { SectionsCopy } from '../../../data';
+import { MagicWandIcon } from '../../../assets/icons';
+import BlurredCirculs from '../../../components/BlurredCirculs';
 
 function PromptEngineeringSection({ sectionId }) {
   const { header } = SectionsCopy.value[sectionId];
   return (
-    <article className="prompt-engineering w-full light:bg-white flex flex-col relative  items-center">
+    <article className="prompt-engineering relative flex w-full flex-col items-center  light:bg-white">
       <BlurredCirculs />
       <SectionHeader>{header}</SectionHeader>
-      <div className="flex w-full flex-col lg:flex-row z-10 justify-between items-center">
+      <div className="z-10 flex w-full flex-col items-center justify-between gap-10 lg:flex-row">
         <section className="">
           <div className="h-80 lg:h-96">
             <img
-              className="h-full w-full object-cover aspect-1 rounded-xl"
+              className="aspect-1 h-full w-full rounded-xl object-cover"
               src={generatedImage7}
               alt="blog image"
             />
           </div>
         </section>
-        <section className="lg:w-2/5 w-full flex flex-col gap-10">
-          <Card className="landing__chat-output bg-background/100 dark:bg-default-100/30 h-[500px] w-full p-5">
+        <section className="flex w-full flex-col gap-10 lg:w-2/5">
+          <Card className="landing__chat-output h-[500px] w-full bg-background/100 p-5 dark:bg-default-100/30">
             <Paragraph>
               I am interested in a detailed description of an ideal modern home
               that balances luxury and functionality. The house should be
@@ -44,7 +44,7 @@ function PromptEngineeringSection({ sectionId }) {
               drought-resistant plants. A swimming p.....
             </Paragraph>
           </Card>
-          <div className="flex relative" action="">
+          <div className="relative flex" action="">
             <Button
               type="submit"
               color="secondary"

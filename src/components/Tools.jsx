@@ -1,5 +1,5 @@
 import { SmallMenu } from './SmallMenu';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Button,
   Input,
@@ -10,7 +10,7 @@ import {
   Divider
 } from '@nextui-org/react';
 import { Select, SelectItem } from '@nextui-org/select';
-import { NumOfImgs, sizes } from '../data';
+import { NumOfImgs, sizes, toneData } from '../data';
 import { promptUseCases } from './UseCaseComponents';
 import { ParagraphHeader, TinyText } from './TextComponents';
 import {
@@ -21,7 +21,6 @@ import {
 } from '../assets/icons';
 
 const CreativitySlider = {
-  label: 'Creativity',
   placeholder: 'Select a Tone',
   value: '',
   items: [],
@@ -70,6 +69,16 @@ const ToolsEndPoints = [
 
 const Tools = ({ page, activeBtn, setActiveBtn }) => {
   const [showHistory, setShowHistory] = useState(false);
+  const [sliderLabel, setSliderLabel] = useState('Balanced');
+  const [sliderValue, setSliderValue] = useState(3);
+
+  useEffect(() => {
+    for (let i = 0; i < 11; i++) {
+      console.log(toneData[i].value);
+      if (sliderValue == i - 5) setSliderLabel(toneData[i].label);
+    }
+  }, [sliderValue]);
+
   return (
     <>
       <Card
@@ -97,7 +106,16 @@ const Tools = ({ page, activeBtn, setActiveBtn }) => {
             )}
           </div>
         </div>
-        {showHistory ? <HistorySection /> : <EndpointsSection page={page} />}
+        {showHistory ? (
+          <HistorySection />
+        ) : (
+          <EndpointsSection
+            sliderLabel={sliderLabel}
+            sliderValue={sliderValue}
+            setSliderValue={setSliderValue}
+            page={page}
+          />
+        )}
       </Card>
     </>
   );
@@ -121,7 +139,7 @@ function HistorySection() {
   );
 }
 
-function EndpointsSection({ page }) {
+function EndpointsSection({ page, sliderLabel, sliderValue, setSliderValue }) {
   return (
     <>
       <section className="flex h-full flex-col justify-between pb-4">
@@ -144,16 +162,18 @@ function EndpointsSection({ page }) {
             if (endPoint.elementType === 'slider')
               return (
                 <Slider
-                  label={endPoint.label}
+                  label={sliderLabel}
                   placeholder={endPoint.placeholder}
                   items={endPoint.items}
                   size="sm"
+                  step={1}
+                  showSteps={true}
                   color="secondary"
-                  step={0.01}
                   maxValue={5}
                   minValue={-5}
                   fillOffset={0}
-                  defaultValue={1.5}
+                  onChange={setSliderValue}
+                  value={sliderValue}
                   formatOptions={{
                     signDisplay: 'always'
                   }}

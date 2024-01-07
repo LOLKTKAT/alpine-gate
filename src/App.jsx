@@ -1,17 +1,18 @@
-import React, { useState } from "react";
-import "./App.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import LandingPage from "./pages/landing-page/LandingPage.jsx";
-import { theme } from "./data/index.js";
-import Dashboard from "./pages/dashbord/Dashboard.jsx";
+import React, { useState } from 'react';
+import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import LandingPage from './pages/landing-page/LandingPage.jsx';
+import { theme } from './data/index.js';
+import Dashboard from './pages/dashbord/Dashboard.jsx';
+import SignUp from './pages/signup/SignUp.jsx';
 const App = () => {
   const [activeBtn, setActiveBtn] = useState(() => {
-    const savedValue = localStorage.getItem("activeBtn");
+    const savedValue = localStorage.getItem('activeBtn');
     return savedValue !== null ? parseInt(savedValue, 10) : 0;
   });
   return (
     <>
-      <main className={`${theme}  text-foreground bg-background`}>
+      <main className={`${theme}  bg-background text-foreground`}>
         <Router>
           <Routes>
             <Route
@@ -30,6 +31,7 @@ const App = () => {
                 <Dashboard activeBtn={activeBtn} setActiveBtn={setActiveBtn} />
               }
             />
+            <Route path="/sign-up" element={<SignUp />} />
           </Routes>
         </Router>
       </main>

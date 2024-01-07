@@ -15,6 +15,9 @@ const Dashboard = ({ activeBtn, setActiveBtn }) => {
   useEffect(() => {
     localStorage.setItem('activeBtn', activeBtn.toString());
   }, [activeBtn]);
+  useEffect(() => {
+    setActiveBtn(0);
+  }, []);
   const Tabs = [
     <ImageGenerator setActiveBtn={setActiveBtn} activeBtn={activeBtn} />,
     <Chat setActiveBtn={setActiveBtn} activeBtn={activeBtn} />,

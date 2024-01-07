@@ -1,11 +1,11 @@
-import React from "react";
-import { Input, Button } from "@nextui-org/react";
-import { useNavigate } from "react-router-dom";
-import Marquee from "./Marquee";
-import { motion } from "framer-motion";
-import { Header, Paragraph } from "../../../components/TextComponents";
-import { SectionsCopy } from "../../../data";
-import { StarIcon } from "../../../assets/icons";
+import React from 'react';
+import { Input, Button } from '@nextui-org/react';
+import { useNavigate } from 'react-router-dom';
+import Marquee from './Marquee';
+import { motion } from 'framer-motion';
+import { Header, Paragraph } from '../../../components/TextComponents';
+import { SectionsCopy } from '../../../data';
+import { StarIcon } from '../../../assets/icons';
 
 const Hero = ({ sectionId, setActiveBtn }) => {
   const { header, paragraphCopy } = SectionsCopy.value[sectionId];
@@ -15,16 +15,16 @@ const Hero = ({ sectionId, setActiveBtn }) => {
   function handleSubmit(event) {
     event.preventDefault();
     setActiveBtn(0);
-    navigate("/dashboard");
+    navigate('/sign-up');
   }
   return (
-    <div className="px-5 lg:-mb-96 -mb-44 text-default-900 ">
-      <article className="bg-purple-900 w-full gap-10 justify-center  flex lg:flex-row flex-col items-center px-20 pt-24 pb-52  rounded-3xl  motion">
+    <div className="-mb-44 px-5 text-default-900 lg:-mb-96 ">
+      <article className="motion flex w-full flex-col  items-center justify-center gap-10 rounded-3xl bg-purple-900 px-20 pb-52  pt-24  lg:flex-row">
         <motion.section
           initial={{ y: 25, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.4 }}
-          className="text-6xl lg:w-2/3 mt-16 lg:mt-0 font-bold text-center capitalize "
+          className="mt-16 text-center text-6xl font-bold capitalize lg:mt-0 lg:w-2/3 "
         >
           <Header>{header}</Header>
         </motion.section>
@@ -32,10 +32,10 @@ const Hero = ({ sectionId, setActiveBtn }) => {
           initial={{ y: 25, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.4 }}
-          className="lg:w-1/2 flex flex-col gap-5"
+          className="flex flex-col gap-5 lg:w-1/2"
         >
           <Paragraph>{paragraphCopy}</Paragraph>
-          <form className="flex relative" onSubmit={handleSubmit} action="">
+          <form className="relative flex" onSubmit={handleSubmit} action="">
             <Input
               type="text"
               label="Prompt"
