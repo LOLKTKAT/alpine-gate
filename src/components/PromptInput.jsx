@@ -1,28 +1,50 @@
-import React from "react";
-import { Card, Tooltip } from "@nextui-org/react";
-import PromptButtons from "./PromptButtons.jsx";
-import { EditIcon } from "../assets/icons.jsx";
+import React from 'react';
+import { Card, Tooltip, Input, Button } from '@nextui-org/react';
+import PromptButtons from './PromptButtons.jsx';
+import { EditIcon, StarIcon, XIcon } from '../assets/icons.jsx';
 
 function PromptInput({ type, setPormptInput, promptInput, handleGenerate }) {
   return (
-    <Card className="p-3 relative flex flex-col justify-between h-1/3 lg:h-1/4">
-      <form className="w-full" onSubmit={(e) => handleGenerate(e)}>
-        <input
+    <Card className="relative flex h-1/3 flex-col p-3 lg:h-1/4">
+      <form className="h-full w-full" onSubmit={(e) => handleGenerate(e)}>
+        <Input
           placeholder="Enter a prompt..."
           type="text"
-          className="all-unset  h-full w-11/12 overflow-wrap-break mb-2 pr-10"
+          variant="flat"
+          size="md"
+          className="all-unset overflow-wrap-break mb-2 h-full border-1 pr-10"
           value={promptInput}
           onChange={(e) => setPormptInput(e.target.value)}
+          startContent={
+            <Tooltip content="Edit Prompt" className="dark" delay={1000}>
+              <div className="cursor-pointer">
+                <EditIcon />
+              </div>
+            </Tooltip>
+          }
+          endContent={
+            <div className="flex gap-2">
+              <Tooltip className="dark" content="Clear Prompt" delay={1000}>
+                <div className="flex cursor-pointer items-center">
+                  <XIcon />
+                </div>
+              </Tooltip>
+              <Tooltip className="dark" content="Generate Prompt" delay={1000}>
+                <Button
+                  type="submit"
+                  onClick={() => handleGenerate()}
+                  color="secondary"
+                  className=" dark"
+                  isIconOnly
+                >
+                  <StarIcon />
+                </Button>
+              </Tooltip>
+            </div>
+          }
         />
       </form>
-      <div className="absolute right-5 top-5 flex flex-col h-10 justify-between">
-        <Tooltip content="Edit Prompt" delay={1000}>
-          <div className="cursor-pointer">
-            <EditIcon />
-          </div>
-        </Tooltip>
-      </div>
-      <div className="flex flex-col lg:flex-row gap-1 lg:gap-3">
+      <div className="flex flex-col gap-1 lg:flex-row lg:gap-3">
         <PromptButtons handleGenerate={handleGenerate} type={type} />
       </div>
     </Card>
