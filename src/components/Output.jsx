@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, Avatar, Spinner, Link } from '@nextui-org/react';
+import { Card, Avatar, Spinner, Link, Skeleton } from '@nextui-org/react';
 import { AlpineLogo } from '../assets/icons';
 import {
   ParagraphHeader,
@@ -52,7 +52,6 @@ function Output({ height, generated, type, promptOutput, outputs }) {
                         </div>
                       ) : (
                         <div>
-                          {console.log(promptOutput[1])}
                           <img src={promptOutput[1].img} />
                           <SubHeader>{promptOutput[1].heading}</SubHeader>
                           {promptOutput[1].body.map((item, i) => {
