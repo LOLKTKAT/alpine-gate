@@ -38,7 +38,6 @@ const ImageGenerator = ({ activeBtn, setActiveBtn }) => {
         ...promptOutput,
         [outputImage1, outputImage2, outputImage3]
       ]);
-      // merge the prompt outputs array with outputs array
       outputs[outputs.length - 1].promptOutput =
         promptOutput[promptOutput.length - 1];
       console.log(outputs);
@@ -47,7 +46,7 @@ const ImageGenerator = ({ activeBtn, setActiveBtn }) => {
 
   return (
     <>
-      <div className="output-card relative flex h-full w-full flex-col gap-8 pl-5 lg:pl-0">
+      <div className="output-card relative flex h-full w-full flex-col gap-5 pl-5 lg:pl-0">
         <Output
           height="h-3/4"
           generated={generated}

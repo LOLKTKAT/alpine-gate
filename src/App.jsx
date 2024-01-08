@@ -14,7 +14,7 @@ const App = () => {
   return (
     <>
       <MyContext.Provider value={{ themeValue, setThemeValue }}>
-        <main className={`${themeValue}  bg-background text-foreground`}>
+        <main className={`bg-background text-foreground`}>
           <Router>
             <Routes>
               <Route

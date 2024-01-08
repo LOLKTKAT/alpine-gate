@@ -59,11 +59,7 @@ const ToolsEndPoints = [
       items: promptUseCases,
       elementType: 'select'
     },
-    CreativitySlider,
-    {
-      elementType: 'button',
-      innerText: 'turn on mic'
-    }
+    CreativitySlider
   ]
 ];
 

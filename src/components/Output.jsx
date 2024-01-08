@@ -1,14 +1,21 @@
 import React, { useState } from 'react';
-import { Card, Avatar, Spinner } from '@nextui-org/react';
+import { Card, Avatar, Spinner, Link } from '@nextui-org/react';
 import { AlpineLogo } from '../assets/icons';
-import { ParagraphHeader, Paragraph } from './TextComponents';
+import {
+  ParagraphHeader,
+  Paragraph,
+  SectionHeader,
+  SubHeader
+} from './TextComponents';
 
 function Output({ height, generated, type, promptOutput, outputs }) {
   const [model] = useState(type == 'chat' ? 'Albert Ai' : 'AGImageAi');
 
   return (
-    <Card className={`w-full overflow-y-scroll  pb-10  pt-6 ${height}`}>
-      <div className="flex flex-col gap-10 pl-3 pr-3">
+    <Card
+      className={`landing__chat-output w-full overflow-y-scroll pb-10 pt-6 ${height}`}
+    >
+      <div className="flex flex-col gap-10  pl-3 pr-3">
         {generated ? (
           <>
             {outputs.map((output, i) => (
@@ -45,7 +52,36 @@ function Output({ height, generated, type, promptOutput, outputs }) {
                         </div>
                       ) : (
                         <div>
-                          <Paragraph>{promptOutput[i]}</Paragraph>
+                          {console.log(promptOutput[1])}
+                          <img src={promptOutput[1].img} />
+                          <SubHeader>{promptOutput[1].heading}</SubHeader>
+                          {promptOutput[1].body.map((item, i) => {
+                            return (
+                              <div className="mb-4" key={i}>
+                                <ParagraphHeader>
+                                  {item.paragraphHeading}
+                                </ParagraphHeader>
+                                <Paragraph>{item.paragraph}</Paragraph>
+                              </div>
+                            );
+                          })}
+                          <ParagraphHeader>
+                            {promptOutput[1].refreneces.refrenceHeading}
+                          </ParagraphHeader>
+                          {promptOutput[1].refreneces.links.map((item, i) => {
+                            return (
+                              <div>
+                                <Link
+                                  color="foreground"
+                                  className="underline"
+                                  href="#"
+                                  key={i}
+                                >
+                                  {item}
+                                </Link>
+                              </div>
+                            );
+                          })}
                         </div>
                       )
                     ) : (
@@ -61,7 +97,12 @@ function Output({ height, generated, type, promptOutput, outputs }) {
             ))}
           </>
         ) : (
-          ''
+          <div className="mt-20 flex w-full flex-col items-center justify-center gap-10">
+            <div className="scale-200">
+              <AlpineLogo />
+            </div>
+            <SectionHeader>Welcome! how can I help you</SectionHeader>
+          </div>
         )}
       </div>
     </Card>

@@ -85,7 +85,7 @@ const Dashboard = ({ activeBtn, setActiveBtn }) => {
   return (
     <>
       <div
-        className={`dashboard w-svh relative flex gap-2 bg-background py-5 pr-2   lg:gap-5 lg:pr-5`}
+        className={`dashboard ${themeValue} w-svh relative flex gap-2 bg-background py-5 pr-2   lg:gap-5 lg:pr-5`}
       >
         <Sidebar setActiveBtn={setActiveBtn} activeBtn={activeBtn} />
         {Tabs[activeBtn]}

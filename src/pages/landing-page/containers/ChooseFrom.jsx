@@ -10,7 +10,7 @@ function ChooseFrom() {
       <SectionHeader>
         Choose from a range of prompt tools for optimal results
       </SectionHeader>
-      <div className="flex w-full items-center justify-between">
+      <div className="flex w-full items-center ">
         <UseCaseComponents />
       </div>
     </article>

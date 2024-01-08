@@ -1,5 +1,5 @@
-import React from "react";
-import "../landing-page.css";
+import React from 'react';
+import '../landing-page.css';
 import {
   Card,
   Button,
@@ -7,27 +7,27 @@ import {
   ListboxItem,
   ListboxSection,
   Tabs,
-  Tab,
-} from "@nextui-org/react";
+  Tab
+} from '@nextui-org/react';
 import {
   Paragraph,
   ParagraphHeader,
   SectionHeader,
-  SubHeader,
-} from "../../../components/TextComponents";
+  SubHeader
+} from '../../../components/TextComponents';
 import {
   ColoredUploadIcon,
   DownloadIcon,
   HistoryIcon,
   UploadIcon,
-  ColoredDownloadIcon,
-} from "../../../assets/icons";
+  ColoredDownloadIcon
+} from '../../../assets/icons';
 
 const History = () => {
   return (
     <div>
       <SubHeader>History</SubHeader>
-      <section className="flex flex-col gap-4 landing__chat-output">
+      <section className="landing__chat-output flex flex-col gap-4">
         <Listbox color="default">
           <ListboxSection showDivider>
             <ListboxItem className="text-white" key="home" href="/">
@@ -49,9 +49,9 @@ const History = () => {
 const UploadFiles = () => {
   return (
     <>
-      <div className="border-4 border-zinc-500 justify-center gap-10 rounded-2xl border-dashed flex flex-col items-center w-full h-full">
-        <div className="w-20 rounded-full h-20 bg-purple-900/20">
-          <div className="scale-200 flex items-center justify-center w-full h-full ">
+      <div className="flex h-full w-full flex-col items-center justify-center gap-10 rounded-2xl border-4 border-dashed border-zinc-500">
+        <div className="h-20 w-20 rounded-full bg-purple-900/20">
+          <div className="flex h-full w-full scale-200 items-center justify-center ">
             <ColoredUploadIcon />
           </div>
         </div>
@@ -68,9 +68,9 @@ const UploadFiles = () => {
 };
 const DownloadWork = () => {
   return (
-    <div className="justify-center gap-10 rounded-2xl border-dashed flex flex-col items-center w-full h-full">
-      <div className="w-20 rounded-full h-20 bg-purple-900/20">
-        <div className="scale-200 flex items-center justify-center w-full h-full ">
+    <div className="flex h-full w-full flex-col items-center justify-center gap-10 rounded-2xl border-dashed">
+      <div className="h-20 w-20 rounded-full bg-purple-900/20">
+        <div className="flex h-full w-full scale-200 items-center justify-center ">
           <ColoredDownloadIcon />
         </div>
       </div>
@@ -83,8 +83,8 @@ const features = [<History />, <UploadFiles />, <DownloadWork />];
 
 function FeaturesTo() {
   return (
-    <article className="w-full  relative light:bg-white flex flex-col  items-center">
-      <div className="h-96 w-1/2 bg-purple-900 opacity-30 absolute blur-3xl top-0	right-0"></div>
+    <article className="relative  flex w-full flex-col items-center  light:bg-white">
+      <div className="absolute right-0 top-0 h-96 w-1/2 bg-purple-900 opacity-30	blur-3xl"></div>
       <section>
         <SectionHeader>Features to make your life easier</SectionHeader>
       </section>
@@ -106,8 +106,8 @@ function FeaturesTo() {
               </div>
             }
           >
-            <section className="prompt-engineering justify-between small-screen items-center flex w-svw">
-              <div className="sm:h-20 md:h-20  lg:h-96 lg:w-2/5 w-full justify-center flex flex-col">
+            <section className="prompt-engineering small-screen flex w-svw items-center justify-around">
+              <div className="flex w-full  flex-col justify-center sm:h-20 md:h-20 lg:h-96 lg:w-2/5">
                 <Paragraph>
                   The Prompt History feature is a functionality that allows the
                   chatbot to remember the conversation history with the user. It
@@ -116,8 +116,8 @@ function FeaturesTo() {
                   personalized conversation.
                 </Paragraph>
               </div>
-              <div className="lg:w-2/5 w-full ">
-                <Card className="bg-background/100 dark:bg-default-100/30 h-96 p-5">
+              <div className="w-full lg:w-2/5 ">
+                <Card className="h-96 bg-background/100 p-5 dark:bg-default-100/30">
                   {features[0]}
                 </Card>
               </div>
@@ -133,15 +133,15 @@ function FeaturesTo() {
               </div>
             }
           >
-            <section className="prompt-engineering small-screen justify-between items-center flex w-svw">
-              <div className="lg:h-96 lg:w-2/5 w-full justify-center flex flex-col">
+            <section className="prompt-engineering small-screen flex w-svw items-center justify-around">
+              <div className="flex w-full flex-col justify-center lg:h-96 lg:w-2/5">
                 <Paragraph>
                   Upload your images and let our AGImageAI generate similar ones
                   that will take your collection to the next level.
                 </Paragraph>
               </div>
-              <div className="lg:w-2/5 w-full">
-                <Card className="bg-background/100 dark:bg-default-100/30 h-96 p-5">
+              <div className="w-full lg:w-2/5">
+                <Card className="h-96 bg-background/100 p-5 dark:bg-default-100/30">
                   {features[1]}
                 </Card>
               </div>
@@ -157,14 +157,14 @@ function FeaturesTo() {
               </div>
             }
           >
-            <section className="prompt-engineering flex justify-between items-center small-screen   w-svw">
-              <div className=" lg:h-96 lg:w-2/5 w-full  p-5 justify-center flex flex-col">
+            <section className="prompt-engineering small-screen flex w-svw items-center justify-around">
+              <div className=" flex w-full flex-col  justify-center p-5 lg:h-96 lg:w-2/5">
                 <Paragraph>
                   Download your completed work in various formats.
                 </Paragraph>
               </div>
-              <div className="lg:w-2/5 w-full">
-                <Card className="bg-background/100 dark:bg-default-100/30 h-96 p-5">
+              <div className="w-full lg:w-2/5">
+                <Card className="h-96 bg-background/100 p-5 dark:bg-default-100/30">
                   {features[2]}
                 </Card>
               </div>

@@ -9,10 +9,10 @@ import BlurredCirculs from '../../../components/BlurredCirculs';
 function PromptEngineeringSection({ sectionId }) {
   const { header } = SectionsCopy.value[sectionId];
   return (
-    <article className="prompt-engineering relative flex w-full flex-col items-center  light:bg-white">
+    <article className="prompt-engineering relative flex w-full flex-col items-center justify-around  light:bg-white">
       <BlurredCirculs />
       <SectionHeader>{header}</SectionHeader>
-      <div className="z-10 flex w-full flex-col items-center justify-between gap-10 lg:flex-row">
+      <div className="z-10 flex w-full flex-col items-center justify-around gap-10 lg:flex-row">
         <section className="">
           <div className="h-80 lg:h-96">
             <img
