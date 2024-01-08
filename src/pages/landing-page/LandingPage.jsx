@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Footer } from "../../components/Footer";
+import React from 'react';
+import { Footer } from '../../components/Footer';
 import {
   Hero,
   ChooseFrom,
@@ -7,50 +7,18 @@ import {
   PromptEngineeringSection,
   GenerateArticlesSection,
   PricingSection,
-  FeaturesTo,
-} from "./containers";
-import { theme } from "../../data";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import "./landing-page.css";
-import NavBar from "../../components/Navbar";
+  FeaturesTo
+} from './containers';
+import { motion } from 'framer-motion';
+import './landing-page.css';
+import NavBar from '../../components/Navbar';
 
 const LandingPage = ({ activeBtn, setActiveBtn }) => {
-  const [toggleTheme, setToggleTheme] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const pricingSection = document.querySelector(".pricing-section");
-
-      if (pricingSection) {
-        const { top } = pricingSection.getBoundingClientRect();
-        // You can adjust the threshold as needed
-        const threshold = 100; // Adjust this value based on your needs
-
-        if (top < window.innerHeight - threshold) {
-          setToggleTheme(true);
-          theme.value = "";
-        } else {
-          setToggleTheme(false);
-          theme.value = "purple-dark";
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-  useEffect(() => {}, [toggleTheme]);
-
   return (
     <>
       <NavBar />
       <motion.div
-        className={`text-foreground w-full transition flex flex-col gap-40`}
+        className={`flex w-full flex-col gap-40 text-foreground transition`}
       >
         <Hero activeBtn={activeBtn} setActiveBtn={setActiveBtn} sectionId={0} />
         <UnleashSection sectionId={1} />

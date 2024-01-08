@@ -1,5 +1,13 @@
 import { signal } from '@preact/signals-react';
 
+// MyContext.js
+import React from 'react';
+
+// Creating a context
+const MyContext = React.createContext();
+
+export default MyContext;
+
 export const theme = signal('');
 
 export const SectionsCopy = signal([

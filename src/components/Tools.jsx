@@ -17,7 +17,8 @@ import {
   HistoryIcon,
   GridDotsBottomIcon,
   GridDotsTopIcon,
-  GridDotsCenterIcon
+  GridDotsCenterIcon,
+  EndpointsIcon
 } from '../assets/icons';
 
 const CreativitySlider = {
@@ -74,7 +75,6 @@ const Tools = ({ page, activeBtn, setActiveBtn }) => {
 
   useEffect(() => {
     for (let i = 0; i < 11; i++) {
-      console.log(toneData[i].value);
       if (sliderValue == i - 5) setSliderLabel(toneData[i].label);
     }
   }, [sliderValue]);
@@ -95,7 +95,8 @@ const Tools = ({ page, activeBtn, setActiveBtn }) => {
           </div>
           <div onClick={() => setShowHistory(!showHistory)}>
             {showHistory ? (
-              <div className="cursor-pointer">
+              <div className="flex cursor-pointer items-center gap-1">
+                <EndpointsIcon />
                 <ParagraphHeader>Endpoints</ParagraphHeader>
               </div>
             ) : (

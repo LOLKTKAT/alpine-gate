@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { logo, paintbrush, vector, search, users, avatar } from "../assets/";
+import React, { useEffect, useContext } from 'react';
+import { logo, paintbrush, vector, search, users, avatar } from '../assets/';
 import {
   Tooltip,
   Button,
@@ -7,60 +7,71 @@ import {
   Avatar,
   Popover,
   PopoverTrigger,
-  PopoverContent,
-} from "@nextui-org/react";
-import { useNavigate } from "react-router-dom";
+  PopoverContent
+} from '@nextui-org/react';
+import { useNavigate } from 'react-router-dom';
 import {
   AlpineLogo,
   ChatIcon,
   ImageGeneratorIcon,
+  MoonIcon,
   SearchIcon,
-  UsersIcon,
-} from "../assets/icons";
-import { Paragraph, ParagraphHeader, TinyText } from "./TextComponents";
+  SunIcon,
+  UsersIcon
+} from '../assets/icons';
+import { ParagraphHeader } from './TextComponents';
+import { theme } from '../data';
+import MyContext from '../data';
 const NAV_ITEMS = [
   {
     file: logo,
-    name: "Home",
-    path: "",
+    name: 'Home',
+    path: '',
     icon: (
       <div className="scale-75">
         <AlpineLogo />
       </div>
-    ),
+    )
   },
   {
     file: paintbrush,
-    name: "Image Generator",
-    path: "image",
-    icon: <ImageGeneratorIcon />,
+    name: 'Image Generator',
+    path: 'image',
+    icon: <ImageGeneratorIcon />
   },
-  { file: vector, name: "Chat", path: "chat", icon: <ChatIcon /> },
-  { file: search, name: "Search", path: "search", icon: <SearchIcon /> },
-  { file: users, name: "friends", path: "friends", icon: <UsersIcon /> },
+  { file: vector, name: 'Chat', path: 'chat', icon: <ChatIcon /> },
+  { file: search, name: 'Search', path: 'search', icon: <SearchIcon /> },
+  { file: users, name: 'friends', path: 'friends', icon: <UsersIcon /> },
   {
     file: avatar,
-    name: "account",
-    path: "accoutn",
-    icon: <Avatar src="https://i.pravatar.cc/150?u=a04258114e29026302d" />,
-  },
+    name: 'account',
+    path: 'accoutn',
+    icon: <Avatar src="https://i.pravatar.cc/150?u=a04258114e29026302d" />
+  }
 ];
 
 function Sidebar({ activeBtn, setActiveBtn }) {
   const navigate = useNavigate();
+  const { themeValue, setThemeValue } = useContext(MyContext);
+
   function handleClick(index) {
     setActiveBtn(index - 1);
   }
+  const handleThemeChange = () => {
+    if (themeValue == 'dark') setThemeValue('light');
+    else if (themeValue == 'light') setThemeValue('dark');
+    else setThemeValue('dark');
+  };
   useEffect(() => {
     setActiveBtn(activeBtn);
   }, [activeBtn]);
 
   return (
-    <Card className="sidebar hidden lg:flex rounded-l-sm">
+    <Card className={`sidebar hidden rounded-l-sm lg:flex`}>
       <section className="sidebar-section">
         {NAV_ITEMS.slice(0, 4).map((item, i) => {
           if (activeBtn === -1) {
-            navigate("/");
+            navigate('/');
           }
           return (
             <Tooltip
@@ -72,8 +83,8 @@ function Sidebar({ activeBtn, setActiveBtn }) {
             >
               <Button
                 onClick={() => handleClick(i)}
-                color={activeBtn === i - 1 ? "secondary" : ""}
-                className={activeBtn === i - 1 ? "dark" : ""}
+                color={activeBtn === i - 1 ? 'secondary' : ''}
+                className={activeBtn === i - 1 ? 'dark' : ''}
                 key={i}
                 isIconOnly
                 aria-label="Like"
@@ -100,8 +111,8 @@ function Sidebar({ activeBtn, setActiveBtn }) {
                 key={i + 4}
                 onClick={() => handleClick(i + 4)}
                 isIconOnly
-                color={activeBtn === i + 3 ? "secondary" : ""}
-                className={activeBtn === i + 3 ? "dark" : ""}
+                color={activeBtn === i + 3 ? 'secondary' : ''}
+                className={activeBtn === i + 3 ? 'dark' : ''}
                 aria-label="Like"
                 size="md"
               >
@@ -114,14 +125,32 @@ function Sidebar({ activeBtn, setActiveBtn }) {
           <PopoverTrigger>
             <Avatar src="https://i.pravatar.cc/150?u=a04258114e29026302d" />
           </PopoverTrigger>
-          <PopoverContent className="dark p-3 items-start flex flex-col gap-2">
+          <PopoverContent
+            className={`flex flex-col items-start gap-2 p-3 ${themeValue}`}
+          >
             <div className="cursor-pointer">
-              <ParagraphHeader>theme</ParagraphHeader>
+              {themeValue === 'light' ? (
+                <div
+                  onClick={() => handleThemeChange()}
+                  className="flex items-center gap-1 text-foreground"
+                >
+                  <MoonIcon />
+                  <ParagraphHeader>Dark</ParagraphHeader>
+                </div>
+              ) : (
+                <div
+                  onClick={() => handleThemeChange()}
+                  className="flex items-center gap-1 text-foreground"
+                >
+                  <SunIcon />
+                  <ParagraphHeader>Light</ParagraphHeader>
+                </div>
+              )}
             </div>
-            <div className="cursor-pointer">
+            <div className="cursor-pointer text-foreground">
               <ParagraphHeader>settings</ParagraphHeader>
             </div>
-            <div className="cursor-pointer">
+            <div className="cursor-pointer text-foreground">
               <ParagraphHeader>log out</ParagraphHeader>
             </div>
           </PopoverContent>

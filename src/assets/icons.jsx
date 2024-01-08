@@ -45,7 +45,7 @@ export const MagicWandIcon = () => {
           stroke-width="1.34"
           stroke-linecap="round"
           stroke-linejoin="round"
-          className="stroke-foreground stroke-background"
+          className="stroke-background stroke-foreground"
         />
       </g>
       <defs>
@@ -263,7 +263,7 @@ export const XIcon = () => {
   );
 };
 
-export const ImageGeneratorIcon = ({ color }) => {
+export const ImageGeneratorIcon = () => {
   return (
     <svg
       height="22"
@@ -698,6 +698,77 @@ export const AlpineLogo = () => {
       <path
         d="M10.4095 28.9801H15.3003C16.0689 25.6796 17.8059 24.5531 18.5782 24.4024H29.4858C30.4352 23.9502 30.3335 23.1213 30.164 22.7634L28.638 19.9941H17.1088C11.3668 21.6218 10.2501 26.663 10.4095 28.9801Z"
         fill="#8A1FE4"
+      />
+    </svg>
+  );
+};
+export const SunIcon = () => {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clip-path="url(#clip0_833_893)">
+        <path
+          d="M7.99998 1.33331V2.66665M7.99998 13.3333V14.6666M2.66665 7.99998H1.33331M4.20939 4.20939L3.26658 3.26658M11.7906 4.20939L12.7334 3.26658M4.20939 11.7933L3.26658 12.7361M11.7906 11.7933L12.7334 12.7361M14.6666 7.99998H13.3333M11.3333 7.99998C11.3333 9.84093 9.84093 11.3333 7.99998 11.3333C6.15903 11.3333 4.66665 9.84093 4.66665 7.99998C4.66665 6.15903 6.15903 4.66665 7.99998 4.66665C9.84093 4.66665 11.3333 6.15903 11.3333 7.99998Z"
+          className="stroke-foreground"
+          stroke-width="1.33333"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_833_893">
+          <rect width="16" height="16" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};
+export const MoonIcon = () => {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clip-path="url(#clip0_833_892)">
+        <path
+          d="M14.6365 8.63777C13.7186 10.248 11.9861 11.3336 9.99998 11.3336C7.05446 11.3336 4.66665 8.94576 4.66665 6.00024C4.66665 4.01399 5.75243 2.28135 7.36283 1.36346C3.97981 1.68423 1.33331 4.53309 1.33331 8.00008C1.33331 11.682 4.31808 14.6667 7.99998 14.6667C11.4668 14.6667 14.3155 12.0205 14.6365 8.63777Z"
+          stroke-width="1.33333"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          className="stroke-foreground"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_833_892">
+          <rect width="16" height="16" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};
+export const EndpointsIcon = () => {
+  return (
+    <svg
+      width="17"
+      height="16"
+      viewBox="0 0 17 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M8.66669 2.66665V10.1333C8.66669 11.2534 8.66669 11.8135 8.88467 12.2413C9.07642 12.6176 9.38238 12.9236 9.75871 13.1153C10.1865 13.3333 10.7466 13.3333 11.8667 13.3333H12M12 13.3333C12 14.0697 12.597 14.6666 13.3334 14.6666C14.0697 14.6666 14.6667 14.0697 14.6667 13.3333C14.6667 12.5969 14.0697 12 13.3334 12C12.597 12 12 12.5969 12 13.3333ZM5.33335 2.66665L12 2.66665M5.33335 2.66665C5.33335 3.40303 4.7364 3.99998 4.00002 3.99998C3.26364 3.99998 2.66669 3.40303 2.66669 2.66665C2.66669 1.93027 3.26364 1.33331 4.00002 1.33331C4.7364 1.33331 5.33335 1.93027 5.33335 2.66665ZM12 2.66665C12 3.40303 12.597 3.99998 13.3334 3.99998C14.0697 3.99998 14.6667 3.40303 14.6667 2.66665C14.6667 1.93027 14.0697 1.33331 13.3334 1.33331C12.597 1.33331 12 1.93027 12 2.66665ZM8.66669 7.99998H12M12 7.99998C12 8.73636 12.597 9.33331 13.3334 9.33331C14.0697 9.33331 14.6667 8.73636 14.6667 7.99998C14.6667 7.2636 14.0697 6.66665 13.3334 6.66665C12.597 6.66665 12 7.2636 12 7.99998Z"
+        className="stroke-foreground"
+        stroke-width="1.33333"
+        stroke-linecap="round"
+        stroke-linejoin="round"
       />
     </svg>
   );

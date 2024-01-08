@@ -9,12 +9,16 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { XIcon } from '../../assets/icons';
 import { Button } from '@nextui-org/react';
 import { SubHeader } from '../../components/TextComponents';
+import { theme } from '../../data';
 
 const Dashboard = ({ activeBtn, setActiveBtn }) => {
   const [showMenu, setShowMenu] = useState();
+
   useEffect(() => {
     localStorage.setItem('activeBtn', activeBtn.toString());
   }, [activeBtn]);
+  useEffect(() => {}, [theme.value]);
+
   useEffect(() => {
     setActiveBtn(0);
   }, []);
@@ -27,13 +31,15 @@ const Dashboard = ({ activeBtn, setActiveBtn }) => {
 
   return (
     <>
-      <div className="dashboard w-svh relative flex gap-2 bg-background py-5 pr-2 dark lg:gap-5 lg:pr-5">
+      <div
+        className={`dashboard w-svh relative flex gap-2 bg-background py-5 pr-2   lg:gap-5 lg:pr-5`}
+      >
         <Sidebar setActiveBtn={setActiveBtn} activeBtn={activeBtn} />
         {Tabs[activeBtn]}
         <Button
           isIconOnly
           variant="bordered"
-          className="border-1 lg:hidden"
+          className="border-1  lg:hidden"
           onClick={() => setShowMenu(!showMenu)}
         >
           <SubHeader>☰</SubHeader>
@@ -45,7 +51,7 @@ const Dashboard = ({ activeBtn, setActiveBtn }) => {
               initial={{ x: 100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: 300, opacity: 0 }}
-              className="w absolute right-0 top-0 z-50 h-svh w-80  lg:hidden"
+              className="w absolute right-0  top-0 z-50 h-svh w-80  lg:hidden"
             >
               <Button
                 isIconOnly
