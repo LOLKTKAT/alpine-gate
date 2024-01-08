@@ -14,8 +14,10 @@ import {
   AlpineLogo,
   ChatIcon,
   ImageGeneratorIcon,
+  LogOut,
   MoonIcon,
   SearchIcon,
+  SettingsIcon,
   SunIcon,
   UsersIcon
 } from '../assets/icons';
@@ -122,7 +124,10 @@ function Sidebar({ activeBtn, setActiveBtn }) {
         })}
         <Popover placement="top" triggerType="tree">
           <PopoverTrigger>
-            <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
+            <Avatar
+              className="cursor-pointer"
+              src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
+            />
           </PopoverTrigger>
           <PopoverContent
             className={`flex flex-col items-start gap-2 p-3 ${themeValue}`}
@@ -146,10 +151,12 @@ function Sidebar({ activeBtn, setActiveBtn }) {
                 </div>
               )}
             </div>
-            <div className="cursor-pointer text-foreground">
+            <div className="flex cursor-pointer items-center gap-1  text-foreground">
+              <SettingsIcon />
               <ParagraphHeader>settings</ParagraphHeader>
             </div>
-            <div className="cursor-pointer text-foreground">
+            <div className="flex cursor-pointer items-center gap-1  text-foreground">
+              <LogOut />
               <ParagraphHeader>log out</ParagraphHeader>
             </div>
           </PopoverContent>
