@@ -20,7 +20,6 @@ import {
   UsersIcon
 } from '../assets/icons';
 import { ParagraphHeader } from './TextComponents';
-import { theme } from '../data';
 import MyContext from '../data';
 const NAV_ITEMS = [
   {
@@ -46,7 +45,7 @@ const NAV_ITEMS = [
     file: avatar,
     name: 'account',
     path: 'accoutn',
-    icon: <Avatar src="https://i.pravatar.cc/150?u=a04258114e29026302d" />
+    icon: <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
   }
 ];
 
@@ -123,7 +122,7 @@ function Sidebar({ activeBtn, setActiveBtn }) {
         })}
         <Popover placement="top" triggerType="tree">
           <PopoverTrigger>
-            <Avatar src="https://i.pravatar.cc/150?u=a04258114e29026302d" />
+            <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026704d" />
           </PopoverTrigger>
           <PopoverContent
             className={`flex flex-col items-start gap-2 p-3 ${themeValue}`}

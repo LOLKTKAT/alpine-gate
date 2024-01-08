@@ -68,7 +68,7 @@ const ToolsEndPoints = [
   ]
 ];
 
-const Tools = ({ page, activeBtn, setActiveBtn }) => {
+const Tools = ({ page }) => {
   const [showHistory, setShowHistory] = useState(false);
   const [sliderLabel, setSliderLabel] = useState('Balanced');
   const [sliderValue, setSliderValue] = useState(3);
@@ -79,13 +79,14 @@ const Tools = ({ page, activeBtn, setActiveBtn }) => {
     }
   }, [sliderValue]);
 
+  if (page > 1) return;
+
   return (
     <>
       <Card
-        className={`absolute right-0 top-0 mb-4 h-full w-72 p-5 pb-10 lg:relative lg:block`}
+        className={`overflow-x-hiddenlg:block right-0 top-0 mb-4 h-full w-full p-5 pb-10 lg:relative lg:w-72`}
       >
-        <SmallMenu activeBtn={activeBtn} setActiveBtn={setActiveBtn} />
-        <div className="header mb-4 flex justify-between dark">
+        <div className="header mb-4 flex justify-between ">
           <div className="cursor-pointer">
             {page === 0 ? (
               <ParagraphHeader>AGImageAI</ParagraphHeader>
@@ -126,15 +127,13 @@ export default Tools;
 
 function HistorySection() {
   return (
-    <section className="history landing__chat-output h-full">
+    <section className="history landing__chat-output max-h-full overflow-y-scroll">
       <div className="flex cursor-pointer flex-col gap-4">
         <div>
           <ParagraphHeader>Prompt example NO.1</ParagraphHeader>
           <TinyText>12/09/2023 15:10</TinyText>
         </div>
-        <div>
-          <Divider />
-        </div>
+        <Divider />
       </div>
     </section>
   );

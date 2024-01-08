@@ -1,15 +1,15 @@
-import React from "react";
-import { Button, Tooltip } from "@nextui-org/react";
-import { MagicWandIcon, MicIcon } from "../assets/icons";
-import { AttatchIcon } from "../assets/icons";
-import { XIcon } from "../assets/icons";
-import { StarIcon } from "../assets/icons";
+import React from 'react';
+import { Button, Tooltip } from '@nextui-org/react';
+import { MagicWandIcon, MicIcon } from '../assets/icons';
+import { AttatchIcon } from '../assets/icons';
+import { XIcon } from '../assets/icons';
+import { StarIcon } from '../assets/icons';
 
 function PromptButtons({ type, handleGenerate }) {
-  if (type == "image") {
+  if (type == 'image') {
     return (
       <>
-        <div className="flex w-full flex-col md:flex-row lg:flex-row gap-2">
+        <div className="flex  gap-2 md:flex-row lg:flex-row">
           <Button
             type="submit"
             onClick={() => handleGenerate()}
@@ -24,7 +24,7 @@ function PromptButtons({ type, handleGenerate }) {
           </Button>
         </div>
 
-        <div className="flex justify-center gap-10 lg:gap-2 lg:flex-row">
+        <div className="flex justify-center gap-10 lg:flex-row lg:gap-2">
           <Tooltip className="dark" content="Attach files" delay={1000}>
             <Button
               variant="flat"
@@ -46,7 +46,7 @@ function PromptButtons({ type, handleGenerate }) {
       </>
     );
   }
-  if (type == "chat") {
+  if (type == 'chat') {
     return (
       <>
         <Button
@@ -62,7 +62,7 @@ function PromptButtons({ type, handleGenerate }) {
           <Button variant="flat" endContent={<MagicWandIcon />} radius="sm">
             Enhance Prompt
           </Button>
-          <div className="flex justify-center gap-10 lg:gap-2 lg:flex-row">
+          <div className="flex justify-center gap-10 lg:flex-row lg:gap-2">
             <Tooltip className="dark" content="Open Mic" delay={1000}>
               <Button
                 variant="flat"
