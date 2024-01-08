@@ -52,7 +52,12 @@ function Output({ height, generated, type, promptOutput, outputs }) {
                         </div>
                       ) : (
                         <div>
-                          <img src={promptOutput[1].img} />
+                          <div className="mb-4 flex aspect-video items-center  justify-center rounded-2xl bg-foreground/10">
+                            <img
+                              className="h-full w-full rounded-2xl object-cover"
+                              src={promptOutput[1].img}
+                            />
+                          </div>
                           <SubHeader>{promptOutput[1].heading}</SubHeader>
                           {promptOutput[1].body.map((item, i) => {
                             return (

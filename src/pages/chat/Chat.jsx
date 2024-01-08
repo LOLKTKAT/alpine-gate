@@ -36,7 +36,7 @@ const Chat = ({ activeBtn, setActiveBtn }) => {
         ...promptOutput,
         Math.random(5 * 3),
         {
-          img: 'https://www.albertaisuite.com/downloaded_image_6670d078-4933-44ee-9d44-b2a805d9dc9e.jpg',
+          img: 'https://www.investopedia.com/thmb/ulGrKT5WnVclGMOgQQVe65OtmeI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/large-language-model-7563532-final-9e350e9fa02d4685887aa061af7a2de2.png',
           heading: 'Understanding Large Language Models (LLMs)',
           body: [
             {
