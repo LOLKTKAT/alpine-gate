@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from 'react';
 import {
   generatedImage1,
   generatedImage2,
@@ -7,14 +7,11 @@ import {
   generatedImage5,
   generatedImage6,
   generatedImage7,
-  generatedImage8,
-} from "../../../assets";
-import { PauseIcon, PlayIcon } from "../../../assets/icons";
-import { Button } from "@nextui-org/react";
+  generatedImage8
+} from '../../../assets';
+import Marquee from 'react-fast-marquee';
 
-const Marquee = () => {
-  const [isAnimationRunning, setIsAnimationRunning] = useState(true);
-
+const MarqueeComponent = () => {
   const generatedImages = [
     generatedImage7,
     generatedImage8,
@@ -23,50 +20,29 @@ const Marquee = () => {
     generatedImage3,
     generatedImage4,
     generatedImage5,
-    generatedImage6,
+    generatedImage6
   ];
 
-  const toggleAnimation = () => {
-    setIsAnimationRunning(!isAnimationRunning);
-  };
-
   return (
-    <div className="flex flex-col gap-3 relative w-full lg:-top-48 -top-28 mb-10 box-wrapper">
-      <Button
-        variant="flat"
-        isIconOnly
-        className="border-0 outline-none focus:outline-none mt-1 mx-3 "
-        onClick={toggleAnimation}
-      >
-        {isAnimationRunning ? (
-          <div className="scale-150">
-            <PauseIcon />
-          </div>
-        ) : (
-          <div className="scale-150">
-            <PlayIcon />
-          </div>
-        )}
-      </Button>
-      <div
-        className={`flex gap-10 marquee ${
-          isAnimationRunning ? "running" : "paused"
-        }`}
-      >
+    <div className="box-wrapper lg:-top-35 relative -top-28 mb-10 flex w-full flex-col gap-3">
+      <Marquee pauseOnHover>
         {generatedImages.map((img, i) => {
           return (
-            <div key={i} className="top-1 box rounded-xl ">
+            <div
+              key={i}
+              className="lg:w- mx-5 mt-5 aspect-square h-40 rounded-xl hover:border-1 lg:h-52"
+            >
               <img
                 src={img}
                 alt="generatedImage1"
-                className="h-full w-full object-cover rounded-xl 	"
+                className="h-full w-full rounded-xl object-cover 	"
               />
             </div>
           );
         })}
-      </div>
+      </Marquee>
     </div>
   );
 };
 
-export default Marquee;
+export default MarqueeComponent;
