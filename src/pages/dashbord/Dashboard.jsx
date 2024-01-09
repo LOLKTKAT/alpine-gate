@@ -6,7 +6,7 @@ import Search from '../search/Search';
 import Friends from '../friends/Friends';
 import Menu from '../../components/Menu';
 import MyContext from '../../data';
-
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 const Dashboard = ({ activeBtn, setActiveBtn }) => {
   const { themeValue } = useContext(MyContext);
 

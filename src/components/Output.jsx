@@ -1,5 +1,20 @@
 import React, { useState } from 'react';
-import { Card, Avatar, Spinner, Link, Skeleton } from '@nextui-org/react';
+import {
+  Card,
+  Avatar,
+  Spinner,
+  Link,
+  Modal,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Button,
+  useDisclosure
+} from '@nextui-org/react';
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
+
 import { AlpineLogo } from '../assets/icons';
 import {
   ParagraphHeader,
@@ -10,11 +25,39 @@ import {
 
 function Output({ height, generated, type, promptOutput, outputs }) {
   const [model] = useState(type == 'chat' ? 'Albert Ai' : 'AGImageAi');
-
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
   return (
     <Card
-      className={`landing__chat-output w-full overflow-y-scroll pb-10 pt-6 ${height}`}
+      className={`landing__chat-output w-full overflow-y-scroll pb-10 pt-6  ${height}`}
     >
+      <Modal
+        size="xs"
+        className="dark"
+        isOpen={isOpen}
+        onOpenChange={onOpenChange}
+      >
+        <ModalContent>
+          {(onClose) => (
+            <>
+              <ModalHeader className="flex flex-col gap-1">
+                Image Viewer
+              </ModalHeader>
+              <ModalBody>
+                <Carousel>
+                  <img src={promptOutput[0][0]} alt="" />
+                  <img src={promptOutput[0][1]} alt="" />
+                  <img src={promptOutput[0][2]} alt="" />
+                </Carousel>
+              </ModalBody>
+              <ModalFooter>
+                <Button color="danger" variant="light" onPress={onClose}>
+                  Close
+                </Button>
+              </ModalFooter>
+            </>
+          )}
+        </ModalContent>
+      </Modal>
       <div className="flex flex-col gap-10  pl-3 pr-3">
         {generated ? (
           <>
@@ -41,12 +84,16 @@ function Output({ height, generated, type, promptOutput, outputs }) {
                       type === 'image' ? (
                         <div className="flex w-full flex-col gap-2 md:flex-row lg:flex-row">
                           <div className="h-full w-48">
-                            <img src={promptOutput[i][0]} alt="" />
+                            <img
+                              onClick={onOpen}
+                              src={promptOutput[i][0]}
+                              alt=""
+                            />
                           </div>
-                          <div className="h-full w-48">
+                          <div onClick={onOpen} className="h-full w-48">
                             <img src={promptOutput[i][1]} alt="" />
                           </div>
-                          <div className="h-full w-48">
+                          <div onClick={onOpen} className="h-full w-48">
                             <img src={promptOutput[i][2]} alt="" />
                           </div>
                         </div>
