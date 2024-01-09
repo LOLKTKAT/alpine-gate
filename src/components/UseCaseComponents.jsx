@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import {
   FilePlusCaseIcon,
   ToolCaseIcon,
@@ -273,9 +273,9 @@ const UseCaseComponents = () => {
 };
 
 const List = ({ setActiveBtn }) => {
-  function handleClick(idx) {
+  const handleClick = useCallback((idx) => {
     setActiveBtn(idx);
-  }
+  }, []);
   return (
     <div>
       <Listbox>
