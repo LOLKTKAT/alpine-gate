@@ -260,8 +260,8 @@ function bgColor(color) {
 const UseCaseComponents = () => {
   const [activeBtn, setActiveBtn] = useState(0);
   return (
-    <section className="flex w-full flex-col justify-around gap-10 lg:flex-row ">
-      <Card className="h-96 w-full bg-background/100 p-5 md:w-2/5  lg:w-2/5 dark:bg-default-100/30">
+    <section className="flex w-full flex-col   justify-around gap-10 lg:flex-row ">
+      <Card className="h-96 w-full bg-background/100 p-5  lg:w-2/5 dark:bg-default-100/30">
         <SubHeader>Use Cases</SubHeader>
         <section className="landing__chat-output flex flex-col gap-4">
           <List activeBtn={activeBtn} setActiveBtn={setActiveBtn} />
@@ -281,7 +281,7 @@ const List = ({ setActiveBtn }) => {
       <Listbox>
         {promptUseCases.map((caseItem, i) => {
           return (
-            <ListboxSection showDivider>
+            <ListboxSection aria-label="a" showDivider>
               <ListboxItem textValue={caseItem.value}>
                 <div
                   onClick={() => handleClick(i)}
@@ -305,7 +305,7 @@ const List = ({ setActiveBtn }) => {
 
 const CardComponent = ({ activeBtn }) => {
   return (
-    <Card className="flex flex-col justify-between bg-background/100  p-5 sm:w-full md:w-2/5 lg:w-2/5 dark:bg-default-100/30">
+    <Card className="flex flex-col justify-between bg-background/100  p-5 sm:w-full lg:w-2/5 dark:bg-default-100/30">
       <section>
         <div
           className={`${bgColor(

@@ -7,11 +7,12 @@ import { MagicWandIcon } from '../../../assets/icons';
 import BlurredCirculs from '../../../components/BlurredCirculs';
 
 function PromptEngineeringSection({ sectionId }) {
-  const { header } = SectionsCopy.value[sectionId];
+  const { header, paragraphCopy } = SectionsCopy.value[sectionId];
   return (
     <article className="prompt-engineering relative flex w-full flex-col items-center justify-around  light:bg-white">
       <BlurredCirculs />
       <SectionHeader>{header}</SectionHeader>
+      <Paragraph>{paragraphCopy}</Paragraph>
       <div className="z-10 flex w-full flex-col items-center justify-around gap-10 lg:flex-row">
         <section className="">
           <div className="h-80 lg:h-96">
@@ -25,23 +26,32 @@ function PromptEngineeringSection({ sectionId }) {
         <section className="flex w-full flex-col gap-10 lg:w-2/5">
           <Card className="landing__chat-output h-[500px] w-full bg-background/100 p-5 dark:bg-default-100/30">
             <Paragraph>
-              I am interested in a detailed description of an ideal modern home
-              that balances luxury and functionality. The house should be
-              designed with sustainability in mind, featuring energy-efficient
-              systems and environmentally friendly materials. It should have a
-              spacious open-plan living area that seamlessly integrates with an
-              outdoor space, perfect for relaxation and entertainment. The
-              kitchen should be state-of-the-art with high-end appliances and a
-              layout that caters to both casual dining and formal gatherings.
-              The home should include a master suite with a walk-in closet and a
-              spa-like bathroom, two additional bedrooms with en-suite
-              bathrooms, and a flexible space that could serve as a home office
-              or gym. Smart home technology should be incorporated for
-              convenience and security, including automated lighting, heating,
-              and cooling systems, as well as advanced security features.
-              Landscaping is important; the outdoor area should have a mix of
-              hardscaping and greenery, with a focus on low-maintenance and
-              drought-resistant plants. A swimming p.....
+              The painting depicts a tranquil scene of a man and woman seated
+              opposite each other at a wooden table, deeply engrossed in
+              studying. The man, to the left, leans forward with his elbows on
+              the table, holding a pen in his right hand and resting his chin on
+              his left, suggesting a moment of thoughtful consideration. The
+              woman, on the right, sits upright with a book open in front of
+              her, her left hand steadying the pages while her right hand
+              appears to be taking notes. Both figures are surrounded by an
+              array of books, papers, and scholarly materials, indicating a
+              serious academic endeavor. The man is dressed in a casual,
+              long-sleeved shirt with rolled-up sleeves, and trousers, his
+              attire suggesting a relaxed yet focused demeanor. His hair is
+              neatly combed, and he wears glasses that reflect the concentration
+              in his eyes. The woman wears a comfortable blouse and her hair is
+              pulled back, keeping it out of her face as she studies. The light
+              source, coming from the upper left of the composition, casts soft
+              shadows and highlights the textures of the paper and the fabric of
+              their clothing, adding depth to the scene. The background of the
+              painting is subdued, featuring a neutral wall that allows the
+              viewer's focus to remain on the central figures. A bookshelf
+              brimming with books is partially visible behind the man,
+              reinforcing the academic setting. The color palette is warm and
+              inviting, with earthy tones that evoke a sense of calm and quiet
+              intellectual pursuit. The artist's brushwork is precise, capturing
+              the serene concentration of the subjects and the intimate
+              atmosphere of shared study.
             </Paragraph>
           </Card>
           <div className="relative flex" action="">

@@ -19,12 +19,12 @@ export const SectionsCopy = signal([
   },
   {
     sectionName: 'unleash',
-    header: 'Examples',
+    header: 'With AGImageAi: Transform Text into Stunning Visuals!',
     paragraphCopy: ''
   },
   {
     sectionName: 'generate articles',
-    header: 'Effortlessly generate captivating articles',
+    header: 'Effortlessly generate captivating articles With AlbertAi',
     paragraphCopy:
       "With Albert's intuitive AI-powered features, writing articles becomes a breeze. Say goodbye to writer's block and time-consuming brainstorming sessions. Simply input your preferences, and Albert swiftly crafts tailored articles on-demand."
   },
@@ -32,7 +32,7 @@ export const SectionsCopy = signal([
     sectionName: 'promptEngineering',
     header: 'Elevate your content with AI-driven prompts',
     paragraphCopy:
-      'Transform your short, less detailed prompts into longer, more detailed ones for superior output results. Our prompt engineeringtool specializes in optimizing and expanding your prompts. By refining and adding specifics, it ensures clearer instructions, leading to improved outcomes and enhanced efficiency in your processes.'
+      'The more detailed your prompt, the more impressive your results. Utilize our prompt engineering feature to effortlessly generate enriched outputs at the click of a button'
   },
   {
     sectionName: 'Choose from',

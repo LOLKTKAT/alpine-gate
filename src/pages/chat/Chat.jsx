@@ -78,7 +78,7 @@ const Chat = ({ activeBtn, setActiveBtn }) => {
       // merge the prompt outputs array with outputs array
       outputs[outputs.length - 1].promptOutput =
         promptOutput[promptOutput.length - 1];
-      console.log(outputs);
+      outputs;
     }, 2000);
   }
   return (

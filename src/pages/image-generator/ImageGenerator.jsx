@@ -23,7 +23,6 @@ const ImageGenerator = ({ activeBtn, setActiveBtn }) => {
 
     setGenerated(true);
     setOutputs([...outputs, OutPutsSchema]);
-    console.log(promptOutput);
 
     setPormptInput('');
   }
@@ -40,7 +39,6 @@ const ImageGenerator = ({ activeBtn, setActiveBtn }) => {
       ]);
       outputs[outputs.length - 1].promptOutput =
         promptOutput[promptOutput.length - 1];
-      console.log(outputs);
     }, 2000);
   }
 

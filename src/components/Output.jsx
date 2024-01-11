@@ -31,7 +31,7 @@ function Output({ height, generated, type, promptOutput, outputs }) {
       className={`landing__chat-output w-full overflow-y-scroll pb-10 pt-6  ${height}`}
     >
       <Modal
-        size="xs"
+        size="lg"
         className="dark"
         isOpen={isOpen}
         onOpenChange={onOpenChange}
@@ -53,6 +53,9 @@ function Output({ height, generated, type, promptOutput, outputs }) {
                 <Button color="danger" variant="light" onPress={onClose}>
                   Close
                 </Button>
+                <Button color="secondary" variant="solid" onPress={onClose}>
+                  Download
+                </Button>
               </ModalFooter>
             </>
           )}
@@ -69,9 +72,11 @@ function Output({ height, generated, type, promptOutput, outputs }) {
                   </div>
                   <div>
                     <ParagraphHeader>@username</ParagraphHeader>
-                    <Paragraph>
-                      <strong>{output.promptValue}</strong>
-                    </Paragraph>
+                    <div className="break-all">
+                      <Paragraph>
+                        <strong>{output.promptValue}</strong>
+                      </Paragraph>
+                    </div>
                   </div>
                 </div>
                 <div className="flex gap-1">

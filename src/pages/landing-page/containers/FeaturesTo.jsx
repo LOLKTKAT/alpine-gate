@@ -89,9 +89,9 @@ function FeaturesTo() {
         <SectionHeader>Features to make your life easier</SectionHeader>
       </section>
 
-      <section className="flex flex-col items-center ">
+      <section className="prompt-engineering flex flex-col items-center ">
         <Tabs
-          className="scale-75 lg:scale-100"
+          className="scale-75  lg:scale-100"
           key="lg"
           size="lg"
           color="secondary"
@@ -106,7 +106,7 @@ function FeaturesTo() {
               </div>
             }
           >
-            <section className="prompt-engineering small-screen flex w-svw items-center justify-around">
+            <section className="prompt-engineering small-screen flex w-svw max-w-[1440px] items-center justify-around">
               <div className="flex w-full  flex-col justify-center sm:h-20 md:h-20 lg:h-96 lg:w-2/5">
                 <Paragraph>
                   The Prompt History feature is a functionality that allows the

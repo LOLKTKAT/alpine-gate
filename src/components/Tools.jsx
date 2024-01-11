@@ -91,12 +91,12 @@ const Tools = ({ page }) => {
           </div>
           <div onClick={() => setShowHistory(!showHistory)}>
             {showHistory ? (
-              <div className="flex cursor-pointer items-center gap-1">
+              <div className="flex cursor-pointer items-center gap-1 underline">
                 <EndpointsIcon />
                 <ParagraphHeader>Endpoints</ParagraphHeader>
               </div>
             ) : (
-              <div className="flex cursor-pointer items-center gap-1">
+              <div className="flex cursor-pointer items-center gap-1 underline">
                 <HistoryIcon />
                 <ParagraphHeader>History</ParagraphHeader>
               </div>
@@ -139,10 +139,11 @@ function EndpointsSection({ page, sliderLabel, sliderValue, setSliderValue }) {
     <>
       <section className="flex h-full flex-col justify-between pb-4">
         <div className="flex flex-col gap-5 ">
-          {ToolsEndPoints[page].map((endPoint) => {
+          {ToolsEndPoints[page].map((endPoint, i) => {
             if (endPoint.elementType === 'select')
               return (
                 <Select
+                  key={i}
                   items={endPoint.items}
                   label={endPoint.label}
                   placeholder={endPoint.placeholder}
@@ -162,6 +163,7 @@ function EndpointsSection({ page, sliderLabel, sliderValue, setSliderValue }) {
                   items={endPoint.items}
                   size="sm"
                   step={1}
+                  key={i}
                   showSteps={true}
                   color="secondary"
                   maxValue={5}
@@ -177,6 +179,7 @@ function EndpointsSection({ page, sliderLabel, sliderValue, setSliderValue }) {
             if (endPoint.elementType === 'input')
               return (
                 <Input
+                  key={i}
                   type={endPoint.type}
                   labelPlacement="inside"
                   label={endPoint.label}
@@ -187,7 +190,7 @@ function EndpointsSection({ page, sliderLabel, sliderValue, setSliderValue }) {
               );
             if (endPoint.elementType === 'button')
               return (
-                <Button variant="flat" className={endPoint.className}>
+                <Button key={i} variant="flat" className={endPoint.className}>
                   {endPoint.innerText}
                 </Button>
               );

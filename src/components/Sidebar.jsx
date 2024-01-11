@@ -81,6 +81,7 @@ function Sidebar({ activeBtn, setActiveBtn }) {
               placement="right"
               className="dark"
               delay={0}
+              key={i}
             >
               <Button
                 onClick={() => handleClick(i)}
@@ -106,6 +107,7 @@ function Sidebar({ activeBtn, setActiveBtn }) {
               content={`${item.name}`}
               placement="right"
               delay={0}
+              key={i}
               className="dark"
             >
               <Button

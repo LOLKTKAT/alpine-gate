@@ -5,12 +5,12 @@ import UseCaseComponents from '../../../components/UseCaseComponents';
 
 function ChooseFrom() {
   return (
-    <article className="prompt-engineering relative flex w-full flex-col items-center text-white light:bg-white  light:text-black">
+    <article className=" relative flex w-full flex-col items-center text-white light:bg-white  light:text-black">
       <BlurredCirculs />
       <SectionHeader>
         Choose from a range of prompt tools for optimal results
       </SectionHeader>
-      <div className="flex w-full items-center ">
+      <div className="flex w-full w-full items-center lg:w-3/4">
         <UseCaseComponents />
       </div>
     </article>
