@@ -15,7 +15,7 @@ export const SectionsCopy = signal([
     sectionName: 'hero',
     header: 'The Future Of Content Creation',
     paragraphCopy:
-      'Transform your text into captivating images, compelling articles, and explore limitless possibilities with agimageAi.'
+      'Transform your text into captivating images, compelling articles, and explore limitless possibilities with AlbertSuit.'
   },
   {
     sectionName: 'unleash',
