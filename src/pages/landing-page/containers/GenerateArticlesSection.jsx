@@ -1,34 +1,40 @@
-import React from "react";
+import React from 'react';
 import {
   Paragraph,
   ParagraphHeader,
   SubHeader,
-  SectionHeader,
-} from "../../../components/TextComponents";
-import { Card, Link, Input, Button } from "@nextui-org/react";
-import { blogImg } from "../../../assets";
-import { SectionsCopy } from "../../../data";
-import BlurredCirculs from "../../../components/BlurredCirculs";
-
+  SectionHeader
+} from '../../../components/TextComponents';
+import { Card, Link, Button } from '@nextui-org/react';
+import { blogImg } from '../../../assets';
+import { SectionsCopy } from '../../../data';
+import BlurredCirculs from '../../../components/BlurredCirculs';
+import { useNavigate } from 'react-router-dom';
 function GenerateArticlesSection({ sectionId }) {
   const { header, paragraphCopy } = SectionsCopy.value[sectionId];
+  const navigate = useNavigate();
 
   return (
-    <article className="generate-articles relative light:bg-white flex flex-col items-center">
+    <article className="generate-articles relative flex flex-col items-center light:bg-white">
       <BlurredCirculs />
       <div className="seaction-header z-10 text-3xl">
         <SectionHeader>{header}</SectionHeader>
       </div>
-      <div className="flex flex-col  lg:flex-row gap-10  justify-between  items-center">
+      <div className="flex flex-col  items-center justify-between  gap-10  lg:flex-row">
         <section className="flex flex-col gap-10 ">
           <Paragraph>{paragraphCopy}</Paragraph>
 
-          <Button type="submit" className="w-1/4" color="secondary">
+          <Button
+            onClick={() => navigate('/sign-up')}
+            type="submit"
+            className="w-1/4"
+            color="secondary"
+          >
             Try now
           </Button>
         </section>
         <section>
-          <Card className="landing__chat-output bg-background/100 h-[500px]  dark:bg-default-100/30  w-full lg:w-128 p-5">
+          <Card className="landing__chat-output h-[500px] w-full  bg-background/100  p-5 lg:w-128 dark:bg-default-100/30">
             <div className="landing__chat-output-info">
               <img src={blogImg} alt="blog img" />
               <p>

@@ -5,7 +5,10 @@ import {
   SubHeader
 } from '../../../components/TextComponents';
 import { Button, Card, Divider } from '@nextui-org/react';
+import { useNavigate } from 'react-router-dom';
+
 function PricingSection() {
+  const navigate = useNavigate();
   return (
     <article className="pricing-section flex w-full flex-col items-center light:bg-white">
       <div className="flex flex-col items-center">
@@ -36,7 +39,9 @@ function PricingSection() {
               <li>Lorem ipsum dolor sit amet .</li>
             </Paragraph>
           </section>
-          <Button color="secondary">use this plan</Button>
+          <Button onClick={() => navigate('/sign-up')} color="secondary">
+            Try now
+          </Button>
         </Card>
         <Card className="pricing-card flex flex-col justify-between bg-purple-950 p-5">
           <section className="flex flex-col items-start">

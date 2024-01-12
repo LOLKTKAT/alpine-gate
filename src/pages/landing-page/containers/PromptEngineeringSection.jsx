@@ -5,9 +5,11 @@ import { Paragraph, SectionHeader } from '../../../components/TextComponents';
 import { SectionsCopy } from '../../../data';
 import { MagicWandIcon } from '../../../assets/icons';
 import BlurredCirculs from '../../../components/BlurredCirculs';
+import { useNavigate } from 'react-router-dom';
 
 function PromptEngineeringSection({ sectionId }) {
   const { header, paragraphCopy } = SectionsCopy.value[sectionId];
+  const navigate = useNavigate();
   return (
     <article className="prompt-engineering relative flex w-full flex-col items-center justify-around  light:bg-white">
       <BlurredCirculs />
@@ -59,6 +61,7 @@ function PromptEngineeringSection({ sectionId }) {
               type="submit"
               color="secondary"
               endContent={<MagicWandIcon />}
+              onClick={() => navigate('/sign-up')}
             >
               Enhance Prompt
             </Button>

@@ -40,7 +40,7 @@ function NavBar() {
         {navItems.map((item) => {
           return (
             <NavbarItem isActive>
-              <Link className="text-inherit" href="#">
+              <Link className="text-inherit" href="/">
                 <ParagraphHeader>{item}</ParagraphHeader>
               </Link>
             </NavbarItem>
@@ -53,7 +53,7 @@ function NavBar() {
           <Button
             as={Link}
             color="secondary"
-            href="#"
+            href="/sign-up"
             variant="bordered"
             className="border-0"
           >
