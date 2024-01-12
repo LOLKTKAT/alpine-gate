@@ -79,14 +79,14 @@ const Tools = ({ page }) => {
   return (
     <>
       <Card
-        className={`overflow-x-hiddenlg:block right-0 top-0 mb-4 h-full w-full p-5 pb-10 lg:relative lg:w-72`}
+        className={`right-0 top-0 mb-4  h-full w-full  overflow-x-hidden p-5 pb-10 lg:relative lg:block lg:w-72`}
       >
         <div className="header mb-4 flex justify-between ">
-          <div className="cursor-pointer">
+          <div>
             {page === 0 ? (
               <ParagraphHeader>AGImageAI</ParagraphHeader>
             ) : (
-              <ParagraphHeader>Albert</ParagraphHeader>
+              <ParagraphHeader>Albert AI</ParagraphHeader>
             )}
           </div>
           <div onClick={() => setShowHistory(!showHistory)}>
@@ -122,10 +122,40 @@ export default Tools;
 
 function HistorySection() {
   return (
-    <section className="history landing__chat-output max-h-full overflow-y-scroll">
-      <div className="flex cursor-pointer flex-col gap-4">
+    <section className="history landing__chat-output h-[400px] lg:h-full">
+      <div className="flex h-full cursor-pointer flex-col gap-4 overflow-y-scroll">
         <div>
-          <ParagraphHeader>Prompt example NO.1</ParagraphHeader>
+          <ParagraphHeader>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ea
+            eaque cumque doloremque ut cupiditate reiciendis, facere ullam sed
+            qui placeat, maxime molestiae, voluptates modi! Voluptates, possimus
+            tempore. Nisi fuga dignissimos corrupti explicabo incidunt iusto hic
+            eligendi commodi optio voluptate.
+          </ParagraphHeader>
+          <TinyText>12/09/2023 15:10</TinyText>
+        </div>
+        <Divider />
+        <div>
+          <ParagraphHeader>Lorem ipsum dolor sit amet.</ParagraphHeader>
+          <TinyText>12/09/2023 15:10</TinyText>
+        </div>
+        <Divider />
+        <div>
+          <ParagraphHeader>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa quod
+            aut dignissimos quam atque repellendus blanditiis exercitationem
+            officiis unde dolore?
+          </ParagraphHeader>
+          <TinyText>12/09/2023 15:10</TinyText>
+        </div>
+        <Divider />
+        <div>
+          <ParagraphHeader>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
+            quibusdam illum, voluptatibus, explicabo placeat fuga at pariatur
+            quos reprehenderit voluptatem earum ullam possimus enim aut
+            deserunt. Assumenda error aut quis.
+          </ParagraphHeader>
           <TinyText>12/09/2023 15:10</TinyText>
         </div>
         <Divider />
@@ -228,7 +258,7 @@ function EndpointsSection({ page, sliderLabel, sliderValue, setSliderValue }) {
           )}
         </div>
         <div className="w-full">
-          <Button className="w-full" color="secondary">
+          <Button className="mt-5 w-full" color="secondary">
             {page == 0 ? 'Download Images' : 'Download Output'}
           </Button>
         </div>
